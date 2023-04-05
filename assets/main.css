@@ -82,6 +82,22 @@ body {
 .citrusEuk__wrapper a {
   text-decoration: none;
 }
+/* overflow scroll bar hide */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.citrusEuk__products-container::-webkit-scrollbar,
+.citrusEuk__RawFoodContainer::-webkit-scrollbar,
+.citrusEuk__productCard_row::-webkit-scrollbar,
+.citrusEuk__wrapper::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.citrusEuk__products-container,
+.citrusEuk__RawFoodContainer,
+.citrusEuk__productCard_row {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .citrusEuk_desktop__hide {
   display: none;
 }
@@ -159,7 +175,7 @@ body {
 #citrusEuk__slider3 {
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center -1px;
   min-height: 290px;
   border: 1px solid rgba(102, 51, 153, 0);
   display: grid;
@@ -219,7 +235,7 @@ body {
 #citrusEuk__slider1 .citrusEuk__sliderTitle p,
 #citrusEuk__slider2 .citrusEuk__sliderTitle p,
 #citrusEuk__slider3 .citrusEuk__sliderTitle p {
-  margin: 0 0 15px;
+  margin: 20px 0 20px;
   font-family: "PetcoCircularTT-Regular", arial !important;
   color: #fff;
 }
@@ -407,7 +423,7 @@ body {
   flex-direction: column;
 }
 .citrusEuk__video_CTA .videoText p {
-  width: 395px;
+  width: 460px;
   max-width: 80%;
   margin: 5px 0 20px;
   font-family: "PetcoCircularTT-Regular", arial !important;
@@ -470,7 +486,7 @@ body {
 }
 .citrusEuk__productCard_container{
   width: 1100px;
-  max-width: 95%;
+  max-width: 100%;
   margin: auto;
   padding-top: 20px;
 }
@@ -480,6 +496,7 @@ body {
   grid-column-gap: 20px;
 }
 .citrusEuk__productCard_item{
+  background-color: #FCEBF4;
   text-align: center;
   display: grid;
   flex-direction: column;
@@ -518,14 +535,14 @@ body {
   max-width: 240px;
 }
 .citrusEuk__productCard_item__Product{
-  max-width: 160px;
+  max-width: 162px;
   text-align: center;
 }
 .citrusEuk__productCard_item__Product h4{
   font-family: "PetcoCircularTT-Medium", arial !important;
   font-weight: normal;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 17px;
   color: #00205B;
   align-items: flex-start;
 }
@@ -718,7 +735,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 .citrusEuk__bannerCTA_Row {
   height: 280px;
@@ -732,7 +749,7 @@ button {
 }
 .citrusEuk__bannerCTA_Content p {
   width: 90%;
-  max-width: 495px;
+  max-width: 570px;
   margin: 20px auto;
   font-family: "PetcoCircularTT-Regular", arial !important;
   font-size: 16px;
@@ -855,6 +872,13 @@ button {
   }
 }
 
+@media all and (min-width: 992px) and (max-width: 1024px) {
+  #citrusEuk__slider1 .citrusEuk__sliderRow, 
+  #citrusEuk__slider2 .citrusEuk__sliderRow, 
+  #citrusEuk__slider3 .citrusEuk__sliderRow{
+    width: 90%;
+  }
+}
 @media all and (min-width: 769px) and (max-width: 1024px) {
   #citrusEuk__slider1 .citrusEuk__sliderTitle button, 
   #citrusEuk__slider2 .citrusEuk__sliderTitle button, 
@@ -901,15 +925,15 @@ button {
   /*------- Slider start (768px) ------*/
   #citrusEuk__slider1 {
     background-image: url(../assets/images/CitrusEuk-POV-1-MOB-bg.png);
-    background-position-x: right;
+    background-position-x: center;
   }
   #citrusEuk__slider2 {
     background-image: url(../assets/images/CitrusEuk-POV-2-MOB-bg.png);
-    background-position-x: right;
+    background-position-x: center;
   }
   #citrusEuk__slider3 {
     background-image: url(../assets/images/CitrusEuk-POV-3-MOB-bg.png);
-    background-position-x: right;
+    background-position-x: center;
   }
   .citrusEuk__sliderRow {
     align-items: flex-start;
@@ -961,6 +985,17 @@ button {
     width: 1130px;
   }
   /*------- Slider end (768px)------*/
+
+  /*------- Benefit start (768px)------*/
+  .citrusEuk__card-title h3{
+    font-size: 17px;
+  }
+  /*------- Benefit end (768px)------*/
+  /*------- Product list start (768px)------*/
+  .citrusEuk-Product-cardImg img{
+    max-height: 190px;
+  }
+  /*------- Product list end (768px)------*/
 
   /*------- Product tab start (768px)------*/
   .citrusEuk__tab_item {
@@ -1054,7 +1089,7 @@ button {
     padding: 0 20px 40px;
   }
   .citrusEuk__sectionTitle {
-    max-width: 85%;
+    max-width: 78%;
     padding: 0 0px;
     font-size: 20px;
     line-height: 20px;
@@ -1065,7 +1100,7 @@ button {
     line-height: 20px;
   }
   .citrusEuk__video_CTA .videoText p{
-    max-width: 90%;
+    max-width: 80%;
   }
   /*------- Video Card Section start (768px)------*/
 
@@ -1128,13 +1163,25 @@ button {
       line-height: 20px;
     }
     .citrusEuk__bannerCTA_Content p{
-      max-width: 80%;
+      max-width: 85%;
       font-size: 13px;
       line-height: 19px;
     }
     /* Product Card start*/
+    .citrusEuk__productCard_item_footer h3{
+      font-size: 16px;
+      line-height: 16px;
+    }
+    .citrusEuk__productCard_item__Product_list.two{
+      max-width: 220px;
+    }
     .citrusEuk__productCard_item__Product_list.two img{
       max-height: 200px;
+    }
+    .citrusEuk__productCard_item_footer p{
+      margin-bottom: 0px;
+      font-size: 13px;
+      line-height: 16px;
     }
     /* Product Card end */
   /*------- CalltoAction end (768px)------*/
@@ -1166,7 +1213,7 @@ button {
     max-width: 100%;
   }
   .citrusEuk__sliderTitle {
-    max-width: 240px;
+    max-width: 260px;
   }
   #citrusEuk__slider1 .citrusEuk__sliderTitle h1, 
   #citrusEuk__slider2 .citrusEuk__sliderTitle h1, 
@@ -1175,12 +1222,12 @@ button {
     line-height: 22px;
   }
   /*-- Slider End (575px) --*/
-  .citrusEuk_desktop__hide{
+  /* .citrusEuk_desktop__hide{
     display: none;
-  }
-  #citrusEuk__slider2 br{
+  } */
+  /* #citrusEuk__slider2 br{
     display: none!important;
-  }
+  } */
   /*-- Product Card --*/
   .citrusEuk__productCard_item__Product_list.two img{
     max-height: 145px;
@@ -1208,7 +1255,7 @@ button {
 @media all and (max-width: 400px) {
   /*-- Slider start --*/
   .citrusEuk__sliderTitle {
-    max-width: 220px;
+    max-width: 260px;
   }
   #citrusEuk__slider1 .citrusEuk__sliderTitle h1, 
   #citrusEuk__slider2 .citrusEuk__sliderTitle h1, 
@@ -1227,9 +1274,9 @@ button {
 
 @media all and (max-width: 375px) {
   /*-- Slider start --*/
-  .citrusEuk__sliderTitle {
-    max-width: 190px;
-  }
+  /* .citrusEuk__sliderTitle {
+    max-width: 250px;
+  } */
   #citrusEuk__slider1 .citrusEuk__sliderTitle button, 
   #citrusEuk__slider2 .citrusEuk__sliderTitle button, 
   #citrusEuk__slider3 .citrusEuk__sliderTitle button{
