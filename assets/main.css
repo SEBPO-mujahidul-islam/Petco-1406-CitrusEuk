@@ -107,6 +107,9 @@ body {
 .citrusEuk_desktop__hide_tab_show{
   display: none;
 }
+.citrusEuk_mobile__show{
+  display: none!important;
+}
 .citrusEuk__mt25{
   margin-top: 25px;
 }
@@ -1089,7 +1092,7 @@ button {
     padding: 0 20px 40px;
   }
   .citrusEuk__sectionTitle {
-    max-width: 78%;
+    max-width: 90%;
     padding: 0 0px;
     font-size: 20px;
     line-height: 20px;
@@ -1190,6 +1193,9 @@ button {
 @media all and (max-width: 650px) {
   .citrusEuk__bannerCTA_section {
     min-height: 760px;
+  }
+  .citrusEuk_mobile__show{
+    display: block!important;
   }
 }
 @media all and (max-width: 575px) {
