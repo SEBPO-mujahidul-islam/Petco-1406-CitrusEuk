@@ -183,6 +183,8 @@ body {
   border: 1px solid rgba(102, 51, 153, 0);
   display: grid;
   align-items: center;
+  margin-left: -1px;
+  margin-right: -2px;
 }
 #citrusEuk__slider1 {
   background-image: url(../assets/images/CitrusEuk-POV-1-DSK-bg.png);
