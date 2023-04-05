@@ -537,7 +537,7 @@ body {
   flex-wrap: nowrap;
 }
 .citrusEuk__productCard_item__Product_list.two{
-  max-width: 240px;
+  max-width: 260px;
 }
 .citrusEuk__productCard_item__Product{
   max-width: 162px;
@@ -545,11 +545,14 @@ body {
 }
 .citrusEuk__productCard_item__Product h4{
   font-family: "PetcoCircularTT-Medium", arial !important;
-  font-weight: normal;
+  font-weight: 600;
   font-size: 16px;
   line-height: 17px;
   color: #00205B;
   align-items: flex-start;
+}
+.citrusEuk__productCard_item__Product h4 b{
+  font-weight: 800;
 }
 .citrusEuk__productCard_item__Product img{
   margin-left: -12px;
@@ -1115,10 +1118,11 @@ button {
     overflow: auto;
   }
   .citrusEuk__productCard_item{
-    min-width: 266px;
+    min-width: 320px;
   }
   .citrusEuk__productCard_item__Product h4{
     font-size: 12px;
+    line-height: 14px;
   }
   .citrusEuk__productCard_item_footer{
     padding: 10px;
@@ -1238,7 +1242,7 @@ button {
   } */
   /*-- Product Card --*/
   .citrusEuk__productCard_item__Product_list.two img{
-    max-height: 145px;
+    max-height: 190px;
   }
   /*-- Product Card end --*/
 
