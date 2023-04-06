@@ -1,0 +1,4597 @@
+<style>
+/*-- Splide CSS Start --*/
+.splide__container {
+  box-sizing: border-box;
+  position: relative;
+}
+.splide__list {
+  backface-visibility: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.splide.is-initialized:not(.is-active) .splide__list {
+  display: block;
+}
+.splide__pagination {
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0;
+  pointer-events: none;
+}
+.splide__pagination li {
+  display: inline-block;
+  line-height: 1;
+  list-style-type: none;
+  margin: 0;
+  pointer-events: auto;
+}
+.splide:not(.is-overflow) .splide__pagination {
+  display: none;
+}
+.splide__progress__bar {
+  width: 0;
+}
+.splide {
+  position: relative;
+  visibility: hidden;
+}
+.splide.is-initialized,
+.splide.is-rendered {
+  visibility: visible;
+}
+.splide__slide {
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  list-style-type: none !important;
+  margin: 0;
+  position: relative;
+}
+.splide__slide img {
+  vertical-align: bottom;
+}
+.splide__spinner {
+  animation: splide-loading 1s linear infinite;
+  border: 2px solid #999;
+  border-left-color: transparent;
+  border-radius: 50%;
+  bottom: 0;
+  contain: strict;
+  display: inline-block;
+  height: 20px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+}
+.splide__sr {
+  clip: rect(0 0 0 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.splide__toggle.is-active .splide__toggle__play,
+.splide__toggle__pause {
+  display: none;
+}
+.splide__toggle.is-active .splide__toggle__pause {
+  display: inline;
+}
+.splide__track {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+@keyframes splide-loading {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.splide__track--draggable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.splide__track--fade > .splide__list > .splide__slide {
+  margin: 0 !important;
+  opacity: 0;
+  z-index: 0;
+}
+.splide__track--fade > .splide__list > .splide__slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+.splide--rtl {
+  direction: rtl;
+}
+.splide__track--ttb > .splide__list {
+  display: block;
+}
+.splide__arrow {
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ccc;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2em;
+  -ms-flex-pack: center;
+  justify-content: center;
+  opacity: 0.7;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2em;
+  z-index: 1;
+}
+.splide__arrow svg {
+  fill: #000;
+  height: 1.2em;
+  width: 1.2em;
+}
+.splide__arrow:hover:not(:disabled) {
+  opacity: 0.9;
+}
+.splide__arrow:disabled {
+  opacity: 0.3;
+}
+.splide__arrow:focus-visible {
+  outline: 3px solid #0bf;
+  outline-offset: 3px;
+}
+.splide__arrow--prev {
+  left: 1em;
+}
+.splide__arrow--prev svg {
+  transform: scaleX(-1);
+}
+.splide__arrow--next {
+  right: 0em;
+}
+.splide.is-focus-in .splide__arrow:focus {
+  outline: 3px solid #0bf;
+  outline-offset: 3px;
+}
+.splide__pagination {
+  bottom: 0.5em;
+  left: 0;
+  padding: 0 1em;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+.splide__pagination__page {
+  background: #ccc;
+  border: 0;
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  margin: 3px;
+  opacity: 0.7;
+  padding: 0;
+  position: relative;
+  transition: transform 0.2s linear;
+  width: 8px;
+}
+.splide__pagination__page.is-active {
+  background: #fff;
+  transform: scale(1.4);
+  z-index: 1;
+}
+.splide__pagination__page:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.splide__pagination__page:focus-visible {
+  outline: 3px solid #0bf;
+  outline-offset: 3px;
+}
+.splide.is-focus-in .splide__pagination__page:focus {
+  outline: 3px solid #0bf;
+  outline-offset: 3px;
+}
+.splide__progress__bar {
+  background: #ccc;
+  height: 3px;
+}
+.splide__slide {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.splide__slide:focus {
+  outline: 0;
+}
+@supports (outline-offset: -3px) {
+  .splide__slide:focus-visible {
+    outline: 3px solid #0bf;
+    outline-offset: -3px;
+  }
+}
+@media screen and (-ms-high-contrast: none) {
+  .splide__slide:focus-visible {
+    border: 3px solid #0bf;
+  }
+}
+@supports (outline-offset: -3px) {
+  .splide.is-focus-in .splide__slide:focus {
+    outline: 3px solid #0bf;
+    outline-offset: -3px;
+  }
+}
+@media screen and (-ms-high-contrast: none) {
+  .splide.is-focus-in .splide__slide:focus {
+    border: 3px solid #0bf;
+  }
+  .splide.is-focus-in .splide__track > .splide__list > .splide__slide:focus {
+    border-color: #0bf;
+  }
+}
+.splide__toggle {
+  cursor: pointer;
+}
+.splide__toggle:focus-visible {
+  outline: 3px solid #0bf;
+  outline-offset: 3px;
+}
+.splide.is-focus-in .splide__toggle:focus {
+  outline: 3px solid #0bf;
+  outline-offset: 3px;
+}
+.splide__track--nav > .splide__list > .splide__slide {
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+.splide__track--nav > .splide__list > .splide__slide.is-active {
+  border: 3px solid #000;
+}
+.splide__arrows--rtl .splide__arrow--prev {
+  left: auto;
+  right: 1em;
+}
+.splide__arrows--rtl .splide__arrow--prev svg {
+  transform: scaleX(1);
+}
+.splide__arrows--rtl .splide__arrow--next {
+  left: 1em;
+  right: auto;
+}
+.splide__arrows--rtl .splide__arrow--next svg {
+  transform: scaleX(-1);
+}
+.splide__arrows--ttb .splide__arrow {
+  left: 50%;
+  transform: translate(-50%);
+}
+.splide__arrows--ttb .splide__arrow--prev {
+  top: 1em;
+}
+.splide__arrows--ttb .splide__arrow--prev svg {
+  transform: rotate(-90deg);
+}
+.splide__arrows--ttb .splide__arrow--next {
+  bottom: 1em;
+  top: auto;
+}
+.splide__arrows--ttb .splide__arrow--next svg {
+  transform: rotate(90deg);
+}
+.splide__pagination--ttb {
+  bottom: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  left: auto;
+  padding: 1em 0;
+  right: 0.5em;
+  top: 0;
+}
+/*-- Splide CSS End --*/
+
+/*-- Main CSS Start--*/
+/* font face add */
+/*
+ * Legal Disclaimer
+ *
+ * These web fonts are licensed exclusively for use on the following:
+ * All domains belonging to Petco
+ *
+ * It is strictly forbidden to download or use these fonts on any other website domain or media.
+ *
+ * While the @font-face statements below may be modified by the client, this
+ * disclaimer may not be removed.
+ *
+ * Lineto.com, 2020
+ */
+
+/*------ Font import start ------*/
+@font-face {
+  font-family: PetcoCircularTT-Regular;
+  src: url(assets/fonts/PetcoCircularTT-Regular.woff2) format("woff2"),
+    url(assets/fonts/PetcoCircularTT-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: PetcoCircularTT-Medium;
+  src: url(assets/fonts/PetcoCircularTT-Medium.woff2) format("woff2"),
+    url(/assets/fonts/PetcoCircularTT-Medium.woff) format("woff");
+}
+@font-face {
+  font-family: PetcoCircularTT-Bold;
+  src: url(assets/fonts/PetcoCircularTT-Bold.woff2) format("woff2"),
+    url(/assets/fonts/PetcoCircularTT-Bold.woff) format("woff");
+}
+/*------ Font import end ------*/
+
+/*========== Common style start (1440px) ==========*/
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "PetcoCircularTT-Regular", arial !important;
+}
+.citrusEuk__wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.citrusEuk__sectionTitle {
+  margin: 15px auto 25px auto;
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-weight: 700;
+  font-size: 25px;
+  text-align: center;
+  color: #000000;
+}
+.citrusEuk__wrapper img {
+  max-width: 100%;
+}
+.citrusEuk__wrapper--commonCTA button {
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #001952;
+  border: none;
+  border-radius: 5px;
+  padding: 22px 60px 18px;
+  cursor: pointer;
+}
+.citrusEuk__wrapper--commonCTA-no-bg button {
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-size: 16px;
+  font-weight: bold;
+  color: #001952;
+  text-transform: capitalize;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  padding: 22px 30px 18px;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;  
+}
+.citrusEuk__wrapper a {
+  text-decoration: none;
+}
+/* overflow scroll bar hide */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.citrusEuk__products-container::-webkit-scrollbar,
+.citrusEuk__RawFoodContainer::-webkit-scrollbar,
+.citrusEuk__productCard_row::-webkit-scrollbar,
+.citrusEuk__wrapper::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.citrusEuk__products-container,
+.citrusEuk__RawFoodContainer,
+.citrusEuk__productCard_row {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.citrusEuk_desktop__hide {
+  display: none;
+}
+.citrusEuk_mobile__hide {
+  display: block;
+}
+.citrusEuk_desktop__hide_tab_show{
+  display: none;
+}
+.citrusEuk_mobile__show{
+  display: none!important;
+}
+.citrusEuk__mt25{
+  margin-top: 25px;
+}
+.citrusEuk__mb10{
+  margin-top: 25px;
+}
+/*========== Common style end (1440px) ==========*/
+
+/*========== Slider common styles start (1440px) ==========*/
+.citrusEuk_carousel {
+  width: 100%;
+  position: relative;
+  display: none;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.citrusEuk_carousel,
+.citrusEuk_carousel-inner,
+.citrusEuk_carousel-item {
+  height: 290px;
+  object-fit: cover;
+}
+.citrusEuk_carousel
+  .citrusEuk_carousel-inner
+  .citrusEuk_carousel-item {
+  justify-content: flex-start;
+  flex: 1;
+}
+.citrusEuk_carousel-inner {
+  display: flex;
+  transition: all ease 0.5s;
+}
+.citrusEuk_carousel-item {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.citrusEuk__sliderContainer{
+  margin-top: -20px;
+}
+.citrusEuk_carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  left: calc(100% / 2 - 52px);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 5px;
+}
+.citrusEuk_carousel-indicators span {
+  display: inline-block;
+  border: 2px solid #09205c;
+  padding: 7px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.citrusEuk_carousel-indicators span.active {
+  background-color: #09205c;
+}
+/*========== Slider common styles end (1440px) ==========*/
+
+/*========== Slider section start (1440px) ==========*/
+#citrusEuk__slider1,
+#citrusEuk__slider2,
+#citrusEuk__slider3 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -1px;
+  min-height: 290px;
+  border: 1px solid rgba(102, 51, 153, 0);
+  display: grid;
+  align-items: center;
+  margin-left: -1px;
+  margin-right: -2px;
+}
+#citrusEuk__slider1 {
+  background-image: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-POV-1-DSK-bg);
+}
+#citrusEuk__slider2 {
+  background-image: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-POV-2-DSK-bg);
+}
+#citrusEuk__slider3 {
+  background-image: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-POV-3-DSK-bg);
+}
+.citrusEuk__sliderRow {
+  width: 90%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+#citrusEuk__slider1 .citrusEuk__sliderRow,
+#citrusEuk__slider2 .citrusEuk__sliderRow,
+#citrusEuk__slider3 .citrusEuk__sliderRow{
+  width: 95%;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: auto;
+}
+.citrusEuk__sliderTitle h1 {
+  margin: 0 0 18px 0;
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 41px;
+  text-transform: uppercase;
+  color: #c01823;
+}
+#citrusEuk__slider1 .citrusEuk__sliderTitle h1,
+#citrusEuk__slider2 .citrusEuk__sliderTitle h1,
+#citrusEuk__slider3 .citrusEuk__sliderTitle h1 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+#citrusEuk__slider1 .citrusEuk__sliderTitle h1,
+#citrusEuk__slider2 .citrusEuk__sliderTitle h1,
+#citrusEuk__slider3 .citrusEuk__sliderTitle h1 {
+  font-size: 35px;
+  line-height: 35px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: #fff;
+}
+#citrusEuk__slider1 .citrusEuk__sliderTitle p,
+#citrusEuk__slider2 .citrusEuk__sliderTitle p,
+#citrusEuk__slider3 .citrusEuk__sliderTitle p {
+  margin: 20px 0 20px;
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  color: #fff;
+}
+#citrusEuk__slider1 .citrusEuk__sliderTitle p,
+#citrusEuk__slider2 .citrusEuk__sliderTitle p,
+#citrusEuk__slider3 .citrusEuk__sliderTitle p{
+  line-height: 22px;
+}
+#citrusEuk__slider1 .citrusEuk__sliderTitle button,
+#citrusEuk__slider2 .citrusEuk__sliderTitle button,
+#citrusEuk__slider3 .citrusEuk__sliderTitle button {
+  background: #fff;
+  color: #00205B;
+  margin-right: 20px;
+  font-weight: bolder;
+  padding: 22px 30px 18px;
+}
+#citrusEuk__slider1 .logo,
+#citrusEuk__slider2 .logo,
+#citrusEuk__slider3 .logo {
+  position: relative;
+  /* margin-top: -14%; */
+  padding-right: 4%;
+}
+#citrusEuk__slider1 .logo img,
+#citrusEuk__slider2 .logo img,
+#citrusEuk__slider3 .logo img {
+  width: 100%;
+  max-width: 283px;
+}
+.citrusEuk__sliderTitle button,
+#citrusEuk__RawFood button,
+.citrusEuk__CalltoActionTextContainer button,
+.citrusEuk--productCommonCTA button {
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #001952;
+  border: none;
+  border-radius: 5px;
+  padding: 22px 60px 18px;
+  cursor: pointer;
+}
+.citrusEuk--productCommonCTA {
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.splide__arrow {
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #122359;
+  border-radius: 50%;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  height: 2.2em;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  opacity: 1;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 2.2em;
+  z-index: 1;
+}
+/*========== Slider section end (1440px) ==========*/
+
+/*========== Product list section start (1440px) ==========*/
+.citrusEuk__products-section {
+  overflow: hidden;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+.citrusEuk__products-container{
+  width: 1440px;
+  max-width: 100%;
+  margin: 0px auto;
+  padding-top: 20px;
+  overflow: auto;
+}
+.citrusEuk__Product_list{
+  width: 1370px;
+  margin: 0px auto;
+  display: -ms-flexbox;  
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.citrusEuk__Product{
+  max-width: 240px;
+  width: 100% !important;
+  margin: 0px 9px;
+}
+.citrusEuk__Product h4{
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #000000;
+}
+.citrusEuk-Product-card p {
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  color: #000000;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  margin: 20px 0 20px;
+  text-decoration: none;
+  max-height: 4em; 
+}
+.citrusEuk__Product a.citrusEuk__productCTA {
+  text-decoration: underline;
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  color: #001952;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+}
+.citrusEuk-Product-cardImg img {
+  max-width: 100%;
+  min-height: 175px;
+}
+.citrusEuk-Product-card > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.citrusEuk-Product-cardImg {
+  padding: 0 10px;
+  margin: auto;
+}
+/*========== Product list section End (1440px) ==========*/
+
+/*========== Video CTA section start (1440px) ==========*/
+.citrusEuk__video_CTA {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 100%;
+  background: rgba(223, 57, 149, .1);
+}
+.citrusEuk__video_CTA .Row {
+  width: 1150px;
+  max-width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  position: relative;
+}
+.citrusEuk__video_CTA .iframe {
+  position: relative;
+  top: -30px;
+}
+.citrusEuk__video_CTA .iframe iframe {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  height: 317px;
+}
+.citrusEuk__video_CTA .sectionTitle{
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+.citrusEuk__video_CTA .videoText {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.citrusEuk__video_CTA .videoText p {
+  width: 460px;
+  max-width: 80%;
+  margin: 5px 0 20px;
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+  text-align: center;
+}
+.citrusEuk__video_CTA .disclaimer{
+  font-size: 16px;
+}
+/*========== Video CTA section start End (1440px) ==========*/
+
+/*========== Benefit section start (1440px) ==========*/
+#citrusEuk__RawFood {
+  margin-top: 50px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+.citrusEuk__RawFoodContainer {
+  width: 1384px;
+  max-width: 100%;
+  margin: auto;
+  padding-top: 25px;
+  padding-bottom: 20px;
+  overflow: auto;
+  text-align: center;
+}
+.citrusEuk__category {
+  width: 1370px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* column-gap: 20px; */
+  text-align: center;
+}
+.citrusEuk__card {
+  width: 277px;
+  text-align: center;
+}
+.citrusEuk__card_img img{
+  max-width: 178px;
+}
+.citrusEuk__card-title h3 {
+  margin: 30px 0 20px;
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+/*========== Benefit section end (1440px) ==========*/
+
+/*========== Product Card section start (1440px) ==========*/
+.citrusEuk__productCard_section{
+  max-width: 100%;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.citrusEuk__productCard_container{
+  width: 1100px;
+  max-width: 100%;
+  margin: auto;
+  padding-top: 20px;
+}
+.citrusEuk__productCard_row{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+.citrusEuk__productCard_item{
+  background-color: #FCEBF4;
+  text-align: center;
+  display: grid;
+  flex-direction: column;
+}
+.citrusEuk__productCard_item_body{
+  background-color: #FCEBF4;
+  padding: 10px;
+}
+.citrusEuk__productCard_item_footer{
+  padding: 45px;
+  background-color: #F4F7FF;
+}
+.citrusEuk__productCard_item_footer h3{
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+}
+.citrusEuk__productCard_item_footer p{
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+.citrusEuk__productCard_item__Product_list{
+  max-width: 480px;
+  margin: 0px auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+}
+.citrusEuk__productCard_item__Product_list.two{
+  max-width: 260px;
+}
+.citrusEuk__productCard_item__Product{
+  max-width: 162px;
+  text-align: center;
+}
+.citrusEuk__productCard_item__Product h4{
+  font-family: "PetcoCircularTT-Medium", arial !important;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  color: #00205B;
+  align-items: flex-start;
+}
+.citrusEuk__productCard_item__Product h4 b{
+  font-weight: 800;
+}
+.citrusEuk__productCard_item__Product img{
+  margin-left: -12px;
+}
+/*========== Product Card section end (1440px) ==========*/
+
+/*========== Product tab style start (1440px) ==========*/
+.citrusEuk-wrapper {
+  width: 100%;
+  max-width: 1273px;
+  margin: auto;
+  overflow-x: auto;
+}
+.citrusEukTabId {
+  width: 1273px;
+  overflow-x: auto;
+}
+.citrusEuk__tab-area {
+  overflow: hidden;
+  padding-top: 35px;
+  padding-bottom: 26px;
+}
+
+.citrusEuk__tab-container {
+  max-width: 1273px;
+  width: 100%;
+  margin: 0 auto;
+}
+.splide__pagination {
+  display: none;
+}
+.citrusEuk__dogProduct,
+.citrusEuk__catProduct {
+  max-width: 195px;
+  width: 100% !important;
+  margin: 0px 9px;
+  display: none;
+}
+.citrusEuk-tab-cardImg img {
+  max-width: 100%;
+  min-height: 175px;
+}
+.citrusEuk-tab-card > a {
+  text-decoration: none;
+  color: #000;
+}
+.citrusEuk-tab-card p {
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  color: #333333;
+  font-size: 13px;
+  text-align: left;
+  margin: 20px 0 10px;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 4em; 
+}
+a.citrusEuk__productCTA {
+  text-decoration: underline;
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  color: #001952;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: bold;
+}
+/***** best seller section ****/
+.citrusEuk__dogProducts,
+.citrusEuk__Products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.citrusEuk-tab-cardImg {
+  padding: 0 10px;
+  margin: auto;
+}
+.citrusTabShow {
+  display: block;
+}
+.citrusEuk__tab_item {
+  text-transform: uppercase;
+  padding: 12px 20px;
+  margin: 0px 10px;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  color: #6e6b6b;
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+button {
+  font-family: "PetcoCircularTT-Regular", arial !important;
+}
+.citrusEuk__tab_item.citrusEuk__Dog-active_tab,
+.citrusEuk__tab_item.citrusEuk__cat-active_tab {
+  color: #001952;
+  border-bottom: 8px solid #001952;
+  margin-top: 10px;
+  border-radius: 0;
+}
+.citrusEukTabId {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #021b4e;
+}
+.citrusEuk_hide_arrow .splide__arrows {
+  display: none;
+}
+.citrusEuk-section__tab-content .splide__arrow:disabled {
+  opacity: 0;
+}
+/*========== Product tab style end (1440px) ==========*/
+
+/*========== Video Card section start (1440px) ==========*/
+.citrusEuk__videoSection {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.citrusEuk__VideoContainer {
+  width: 1100px;
+  max-width: 95%;
+  margin: auto;
+  padding-top: 20px;
+}
+.citrusEuk__VideoRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+}
+.citrusEuk__VideoCard {
+  background-color: rgba(192, 24, 35, 0.15);
+  text-align: center;
+  padding-bottom: 30px;
+  display: grid;
+  flex-direction: column;
+}
+.citrusEuk__VideoCard .iframe iframe {
+  width: 100%;
+  height: 315px;
+}
+
+.citrusEuk__cardBody h3 {
+  font-family: "PetcoCircularTT-Bold", arial !important;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  margin: 30px 0 20px;
+}
+.citrusEuk__cardBody p {
+  font-family: "PetcoCircularTT-regular", arial !important;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+}
+/*========== Video Card section end (1440px) ==========*/
+
+/*========== Banner CTA style start (1440px) ==========*/
+.citrusEuk__bannerCTA_section {
+  min-height: 275px;
+  background: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-BrandBookendMod-DSK-BG);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.citrusEuk__bannerCTA_Row {
+  height: 280px;
+  margin-left: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.citrusEuk__bannerCTA_Content {
+  text-align: center;
+}
+.citrusEuk__bannerCTA_Content p {
+  width: 90%;
+  max-width: 570px;
+  margin: 20px auto;
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+}
+/*========== Banner CTA style end (1440px) ==========*/
+
+/*========== Banner CTA Content Right section start (1440px) ==========*/
+#citrusEuk__CalltoAction {
+  margin-bottom: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.citrusEuk__CalltoActionRow {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.citrusEuk__CalltoActionLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+}
+.citrusEuk__CalltoActionLeft img {
+  width: 100%;
+  max-width: 400px;
+}
+.citrusEuk__in-imageCopy {
+  margin: 0;
+  padding: 0;
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  font-size: 18px;
+  line-height: 20px;
+  color: #fff;
+}
+.citrusEuk__CalltoActionTextContainer {
+  text-align: center;
+}
+.citrusEuk__CalltoActionTextContainer p {
+  width: 90%;
+  max-width: 495px;
+  margin: 20px auto;
+  font-family: "PetcoCircularTT-Regular", arial !important;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+}
+/*========== Banner CTA Content Right section end (1440px) ==========*/
+
+/*========== Responsive styling start ==========*/
+@media all and (min-width: 1440px) {
+  .citrusEuk__RawFoodContainer {
+    width: 1384px;
+    max-width: 100%;
+    margin: auto;
+  }
+}
+@media all and (min-width: 1201px) and (max-width: 1350px) {
+  #citrusEuk__slider1 .logo,
+  #citrusEuk__slider2 .logo,
+  #citrusEuk__slider3 .logo {
+    width: 270px;
+  }
+  #citrusEuk__slider1 .logo,
+  #citrusEuk__slider2 .logo,
+  #citrusEuk__slider3 .logo {
+    width: 250px;
+  }
+}
+
+@media all and (max-width: 1350px) {
+  .citrusEuk_desktop__hide_tab_show{
+    display: block;
+  }
+}
+
+@media all and (max-width: 1301px) {
+  .citrusEuk__tab-container {
+    width: 90%;
+  }
+  .citrusEuk__dogProduct,
+  .citrusEuk__catProduct {
+    max-width: 210px;
+  }
+}
+
+@media all and (max-width: 1280px) {
+  .citrusEuk__tab_item {
+    width: 72%;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1250px) {
+  .citrusEuk__videoRow {
+    width: 95%;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  .citrusEuk_desktop__hide {
+    display: block;
+  }
+  .citrusEuk__sliderTitle h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    line-height: 30px;
+  }
+  #citrusEuk__slider1 .logo,
+  #citrusEuk__slider2 .logo,
+  #citrusEuk__slider3 .logo {
+    width: 220px;
+  }
+  .citrusEuk__sectionTitle.citrusEuk_desktop__hide {
+    display: none;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 1024px) {
+  #citrusEuk__slider1 .citrusEuk__sliderRow, 
+  #citrusEuk__slider2 .citrusEuk__sliderRow, 
+  #citrusEuk__slider3 .citrusEuk__sliderRow{
+    width: 90%;
+  }
+}
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  #citrusEuk__slider1 .citrusEuk__sliderTitle button, 
+  #citrusEuk__slider2 .citrusEuk__sliderTitle button, 
+  #citrusEuk__slider3 .citrusEuk__sliderTitle button{
+    margin-right: 0px;
+    padding: 12px 20px 12px;
+  }
+  #citrusEuk__slider1 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider2 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider3 .citrusEuk__sliderTitle h1{
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .citrusEuk__bannerCTA_Row{
+    margin-left: 0%;
+  }  
+}
+
+@media all and (min-width: 769px) and (max-width: 991px) {
+  .citrusEuk_carousel, 
+  .citrusEuk_carousel-inner, 
+  .citrusEuk_carousel-item{
+    height: 290px;
+  }
+  #citrusEuk__slider1, 
+  #citrusEuk__slider2, 
+  #citrusEuk__slider3{
+    height: 290px;
+  }
+
+  .citrusEuk__productCard_item__Product img{
+    max-height: 200px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .citrusEuk_desktop__hide {
+    display: block;
+  }
+  .citrusEuk_mobile__hide {
+    display: none;
+  }
+  /*------- Slider start (768px) ------*/
+  #citrusEuk__slider1 {
+    background-image: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-POV-1-MOB-bg);
+    background-position-x: center;
+  }
+  #citrusEuk__slider2 {
+    background-image: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-POV-2-MOB-bg);
+    background-position-x: center;
+  }
+  #citrusEuk__slider3 {
+    background-image: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-POV-3-MOB-bg);
+    background-position-x: center;
+  }
+  .citrusEuk__sliderRow {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+  }
+  #citrusEuk__slider1 .citrusEuk__sliderRow, 
+  #citrusEuk__slider2 .citrusEuk__sliderRow, 
+  #citrusEuk__slider3 .citrusEuk__sliderRow{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  #citrusEuk__slider1 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider2 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider3 .citrusEuk__sliderTitle h1{
+    font-size: 25px;
+    line-height: 25px;
+  }
+  .citrusEuk__sliderTitle button,
+  #citrusEuk__RawFood button,
+  .citrusEuk__CalltoActionTextContainer button,
+  .citrusEuk--productCommonCTA button,
+  .citrusEuk__wrapper--commonCTA button {
+    font-size: 16px;
+    color: #001952;
+    text-transform: capitalize;
+    background: none;
+    padding: 0;
+    text-decoration: underline;
+  }
+  #citrusEuk__slider1 .citrusEuk__sliderTitle button,
+  #citrusEuk__slider2 .citrusEuk__sliderTitle button,
+  #citrusEuk__slider3 .citrusEuk__sliderTitle button{
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: capitalize;
+    background: none;
+    padding: 0;
+    text-decoration: underline;
+  }
+  #citrusEuk__slider1 .citrusEuk__sliderTitle button, 
+  #citrusEuk__slider2 .citrusEuk__sliderTitle button, 
+  #citrusEuk__slider3 .citrusEuk__sliderTitle button
+  .citrusEuk__sliderCTABox{
+    margin-right: 0px;
+  }
+  .citrusEuk__category{
+    width: 1130px;
+  }
+  /*------- Slider end (768px)------*/
+
+  /*------- Benefit start (768px)------*/
+  .citrusEuk__card-title h3{
+    font-size: 17px;
+  }
+  /*------- Benefit end (768px)------*/
+  /*------- Product list start (768px)------*/
+  .citrusEuk-Product-cardImg img{
+    max-height: 190px;
+  }
+  /*------- Product list end (768px)------*/
+
+  /*------- Product tab start (768px)------*/
+  .citrusEuk__tab_item {
+    width: 100%;
+  }
+  .citrusEuk__dogProduct,
+  .citrusEuk__catProduct {
+    max-width: 235px;
+  }
+  .splide__arrows {
+    display: none;
+  }
+  a.citrusEuk__productCTA {
+    text-decoration: underline !important;
+  }
+  .citrusEuk__tab-area {
+    padding-bottom: 0;
+  }
+  /*------- Product tab end (768px)------*/ 
+
+  /*------- Video CTA section start (768px)------*/
+  .citrusEuk__video_CTA{
+    margin-top: 0px;
+  }
+  .citrusEuk__video_CTA .Row{
+    grid-gap: 0px;
+  }
+  .citrusEuk__video_CTA button {
+    color: #001952;
+    background: none;
+    width: fit-content;
+    height: fit-content;
+    text-transform: capitalize;
+    text-decoration: underline;
+  }
+  .citrusEuk__video_CTA .Row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .citrusEuk__video_CTA.order1 {
+    order: 2;
+  }
+  .citrusEuk__video_CTA.order2 {
+    order: 1;
+  }
+  .citrusEuk__video_CTA .iframe {
+    top: 3px;
+    margin-top: 40px;
+  }
+  .citrusEuk__video_CTA .videoText {
+    padding-top: 20px;
+  }
+  /*------- Video CTA section End (768px)------*/
+  
+  /*------- Video Card Section start (768px)------*/
+  .citrusEuk__videoSection {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .citrusEuk__VideoContainer {
+    max-width: 100%;
+  }
+  .citrusEuk__VideoContainer {
+    padding-top: 0;
+    width: 700px;
+    overflow: auto;
+  }
+  .citrusEuk__VideoRow {
+    width: 624px;
+    margin: 0 20px;
+  }
+  .citrusEuk__VideoCard {
+    padding-bottom: 0;
+  }
+  .citrusEuk__VideoCard .iframe iframe {
+    height: 217px;
+  }
+  .citrusEuk__cardBody p {
+    width: 90%;
+    padding-bottom: 30px;
+  }
+  .citrusEuk__VideoCard .iframe.order1 {
+    display: grid;
+    order: 2;
+  }
+  .citrusEuk__VideoCard .citrusEuk__cardBody.order2 {
+    display: grid;
+    order: 1;
+  }
+  .citrusEuk__videoSection > .citrusEuk__sectionTitle {
+    padding: 0 20px 40px;
+  }
+  .citrusEuk__sectionTitle {
+    max-width: 90%;
+    padding: 0 0px;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .citrusEuk__video_CTA .sectionTitle{
+    font-size: 20px;
+    line-height: 20px;
+  }
+  .citrusEuk__video_CTA .videoText p{
+    max-width: 80%;
+  }
+  /*------- Video Card Section start (768px)------*/
+
+  /*------- Product Card start (768px)------*/
+  .citrusEuk__productCard_row{
+    max-width: 100%;
+    overflow: auto;
+  }
+  .citrusEuk__productCard_item{
+    min-width: 320px;
+  }
+  .citrusEuk__productCard_item__Product h4{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .citrusEuk__productCard_item_footer{
+    padding: 10px;
+  }
+  /*------- Product Card end (768px)------*/
+
+  /*------- CalltoAction start (768px)------*/
+  #citrusEuk__CalltoAction {
+    background: #f4ede3;
+  }
+  .citrusEuk__CalltoActionRow {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .citrusEuk__CalltoActionRow .order1 {
+    order: 2;
+  }
+  .citrusEuk__CalltoActionRow .order2 {
+    order: 1;
+    margin: 40px 0 30px;
+  }
+  .citrusEuk__CalltoActionLeft {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+  }
+  .citrusEuk__in-imageCopy {
+    font-size: 14px;
+    line-height: 15px;
+  }
+    /* Banner CTA start */
+    .citrusEuk__bannerCTA_section {
+      min-height: 900px;
+      background: url(https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-BrandBookendMod-MOB-BG);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    .citrusEuk__bannerCTA_Row{
+      margin-left: 0px;
+      padding-top: 20px;
+      justify-content: center;
+    }
+    .citrusEuk__bannerCTA_Content h2{
+      max-width: 90%;
+      font-size: 20px;
+      line-height: 20px;
+    }
+    .citrusEuk__bannerCTA_Content p{
+      max-width: 85%;
+      font-size: 13px;
+      line-height: 19px;
+    }
+    /* Product Card start*/
+    .citrusEuk__productCard_item_footer h3{
+      font-size: 16px;
+      line-height: 16px;
+    }
+    .citrusEuk__productCard_item__Product_list.two{
+      max-width: 220px;
+    }
+    .citrusEuk__productCard_item__Product_list.two img{
+      max-height: 200px;
+    }
+    .citrusEuk__productCard_item_footer p{
+      margin-bottom: 0px;
+      font-size: 13px;
+      line-height: 16px;
+    }
+    /* Product Card end */
+  /*------- CalltoAction end (768px)------*/
+}
+
+@media all and (max-width: 650px) {
+  .citrusEuk__bannerCTA_section {
+    min-height: 760px;
+  }
+  .citrusEuk_mobile__show{
+    display: block!important;
+  }
+}
+@media all and (max-width: 575px) {
+  /*-- Slider start --*/
+  .citrusEuk__sliderTitle h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    line-height: 26px;
+  }
+  #citrusEuk__slider1 .logo {
+    width: 160px;
+    position: relative;
+    top: -40px;
+  }
+  #citrusEuk__slider2 .logo img,
+  #citrusEuk__slider3 .logo img {
+    width: 100%;
+    max-width: 194px;
+  }
+  .citrusEuk__sliderTitle {
+    max-width: 100%;
+  }
+  .citrusEuk__sliderTitle {
+    max-width: 260px;
+  }
+  #citrusEuk__slider1 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider2 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider3 .citrusEuk__sliderTitle h1{
+    font-size: 22px;
+    line-height: 22px;
+  }
+  /*-- Slider End (575px) --*/
+
+  /*-- Product Card --*/
+  .citrusEuk__productCard_item__Product_list.two img{
+    max-height: 190px;
+  }
+  /*-- Product Card end --*/
+
+  /*-- Banner CTA start --*/
+  .citrusEuk__bannerCTA_section {
+    min-height: 675px;
+  }
+  /*-- Banner CTA End --*/
+
+}
+
+@media all and (max-width: 480px) {
+  /*-- Banner CTA start --*/
+  .citrusEuk__bannerCTA_section {
+    min-height: 565px;
+  }
+  .citrusEuk__bannerCTA_Row{
+    height: auto;
+  }
+  /*-- Banner CTA End --*/
+}
+@media all and (max-width: 400px) {
+  /*-- Slider start --*/
+  .citrusEuk__sliderTitle {
+    max-width: 260px;
+  }
+  #citrusEuk__slider1 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider2 .citrusEuk__sliderTitle h1, 
+  #citrusEuk__slider3 .citrusEuk__sliderTitle h1{
+    font-size: 21px;
+    line-height: 21px;
+  }
+  /*-- Slider start --*/
+
+  /*-- Banner CTA start --*/
+  .citrusEuk__bannerCTA_section {
+    min-height: 470px;
+  }
+  /*-- Banner CTA end --*/
+}
+
+@media all and (max-width: 375px) {
+  /*-- Slider start --*/
+  #citrusEuk__slider1 .citrusEuk__sliderTitle button, 
+  #citrusEuk__slider2 .citrusEuk__sliderTitle button, 
+  #citrusEuk__slider3 .citrusEuk__sliderTitle button{
+    font-size: 14px;
+  }
+  .citrusEuk__sliderTitle h1 {
+    font-size: 24px;
+    line-height: 23px;
+  }
+  #citrusEuk__slider1.logo {
+    width: 145px;
+    position: relative;
+    top: -10px;
+  }
+  /*-- Slider End --*/
+
+  /*-- Prodct Tab start (375px) --*/
+  .citrusEuk__dogProduct,
+  .citrusEuk__catProduct {
+    max-width: 195px;
+  }
+  /*-- Prodct Tab End --*/
+
+  /*-- Banner CTA start --*/
+  .citrusEuk__bannerCTA_section {
+    min-height: 435px;
+  }
+  /*-- Banner CTA end --*/
+}
+
+/*-- Main CSS End --*/
+</style>
+
+    <main class="citrusEuk__wrapper">
+        <!----- POV Section ----->
+        <section class="citrusEuk_carousel">
+            <div class="citrusEuk_carousel-inner">               
+                <!-- POV-01 start -->
+                <div class="citrusEuk_carousel-item">
+                    <div id="citrusEuk__slider1" class="citrusEuk__slider">
+                        <div class="citrusEuk__sliderContainer"
+                            title="Dog runs through the water">
+                            <div class="citrusEuk__sliderRow">
+                                <div class="logo citrusEuk_mobile__hide">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/Eukanuba-Logo"
+                                        alt="Eukanuba logo">
+                                </div>
+                                <div class="citrusEuk__sliderTitle">
+                                    <h1>PERFORMANCE <br class="citrusEuk_desktop__hide">AT ITS PEAK</h1>
+                                    <p>Contains activity-based nutrient  <br class="citrusEuk_desktop__hide">levels for energy that 
+                                        <br class="citrusEuk_mobile__hide">matches your dog’s efforts. </p>
+                                    <div class="citrusEuk__sliderCTABox">   
+                                        <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba#facet:40992764608222332288311211111411647691101001171149711099101&productBeginIndex:0&orderBy:2&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                                            manual_cm_sp="sponsoredbrandpage:eukanuba:heropov:1:performanceatitspeak:shoppremiumperformance"
+                                            onclick="clickTrackLink(this);">
+                                            <button>Shop Premium Performance</button>
+                                        </a>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- POV-01 End -->
+                <!-- POV-02 start -->
+                <div class="citrusEuk_carousel-item">
+                    <div id="citrusEuk__slider2" class="citrusEuk__slider">
+                        <div class="citrusEuk__sliderContainer"
+                            title="Dog runs with vigor">
+                            <div class="citrusEuk__sliderRow">
+                                <div class="logo citrusEuk_mobile__hide">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/Eukanuba-Logo"
+                                        alt="Eukanuba logo">
+                                </div>
+                                <div class="citrusEuk__sliderTitle">
+                                    <h1>FUEL FOR <br class="citrusEuk_desktop__hide">EVERYDAY <br class="citrusEuk_desktop__hide">ATHLETES</h1>
+                                    <p>Delivers optimal energy <br class="citrusEuk_desktop__hide">to power your dog’s active lifestyle. </p>
+                                    <div class="citrusEuk__sliderCTABox">   
+                                        <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food#facet:307445734561667669465100117108116&productBeginIndex:0&orderBy:&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                                            manual_cm_sp="sponsoredbrandpage:eukanuba:heropov:2:fuelforeverydayathletes:shopadultformulas"
+                                            onclick="clickTrackLink(this);">
+                                            <button>Shop Adult Formulas</button>
+                                        </a>     
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- POV-02 End -->
+                <!-- POV-03 start -->
+                <div class="citrusEuk_carousel-item">
+                    <div id="citrusEuk__slider3" class="citrusEuk__slider">
+                        <div class="citrusEuk__sliderContainer"
+                            title="Senior dog stands in tall grass">
+                            <div class="citrusEuk__sliderRow">
+                                <div class="logo citrusEuk_mobile__hide">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/Eukanuba-Logo"
+                                        alt="Eukanuba logo">
+                                </div>
+                                <div class="citrusEuk__sliderTitle">
+                                    <h1>HEALTHY MIND, <br class="citrusEuk_desktop__hide">AGILE BODY</h1>
+                                    <p>Provides optimal energy to <br class="citrusEuk_desktop__hide">help senior dogs sustain an 
+                                        <br class="citrusEuk_desktop__hide">active lifestyle.  </p>
+                                    <div class="citrusEuk__sliderCTABox">   
+                                        <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/senior-dog-food"
+                                            manual_cm_sp="sponsoredbrandpage:eukanuba:heropov:3:healthymindagilebody:shopseniorformulas"
+                                            onclick="clickTrackLink(this);">
+                                            <button>Shop Senior Formulas</button>
+                                        </a>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- POV-03 End -->
+            </div>
+            <!-- POV Controls start -->
+            <div class="citrusEuk_carousel-controls">
+                <span class="prev"></span>
+                <span class="next"></span>
+            </div>
+            <div class="citrusEuk_carousel-indicators">                
+            </div>
+            <!-- POV Controls End -->
+        </section>
+        <!----- POV Section End ----->
+
+        <!----- Product list section start ----->
+        <section class="citrusEuk__products-section">
+            <h2 class="citrusEuk__sectionTitle">Explore Eukanuba products</h2>
+            <div class="citrusEuk__products-container">            
+                <div class="citrusEuk__Product_list">
+                    <!-- Product item 01 start -->
+                    <div class="citrusEuk__Product">
+                        <div class="citrusEuk-Product-card">
+                            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba#facet:40992764608222332288311211111411647691101001171149711099101&productBeginIndex:0&orderBy:2&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:1:premiumperformance:shopnow"
+                                onclick="clickTrackLink(this);">
+                                <div class="citrusEuk-Product-cardImg">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Product-1.1_ExploreEukanubaProducts-PremiumPerformance"
+                                        alt="Premium Performance dog food bags" />
+                                </div>
+                                <div class="citrusEuk-Product-cardBody">
+                                    <h4>Premium Performance</h4>
+                                    <p>Food that helps take them to the next level of performance.</p>
+                                </div>
+                            </a>
+                            <a class="citrusEuk__productCTA"
+                                href="https://www.petco.com/shop/en/petcostore/brand/eukanuba#facet:40992764608222332288311211111411647691101001171149711099101&productBeginIndex:0&orderBy:2&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:1:premiumperformance:shopnow"
+                                onclick="clickTrackLink(this);">Shop Now</a>
+                        </div>
+                    </div>
+                    <!-- Product item 01 end -->
+                    <!-- Product item 02 start -->
+                    <div class="citrusEuk__Product">
+                        <div class="citrusEuk-Product-card">
+                            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food#facet:307445734561667669465100117108116&productBeginIndex:0&orderBy:&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:2:everydayathletes:shopnow"
+                                onclick="clickTrackLink(this);">
+                                <div class="citrusEuk-Product-cardImg">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Product-1.2_ExploreEukanubaProducts-EverydayAthletes"
+                                        alt="Adult dog food bags" />
+                                </div>
+                                <div class="citrusEuk-Product-cardBody">
+                                    <h4>Everyday Athletes</h4>
+                                    <p>Nutrition that helps active dogs do what they love to do.</p>
+                                </div>
+                            </a>
+                            <a class="citrusEuk__productCTA"
+                                href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food#facet:307445734561667669465100117108116&productBeginIndex:0&orderBy:&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:2:everydayathletes:shopnow"
+                                onclick="clickTrackLink(this);">Shop Now</a>
+                        </div>
+                    </div>
+                    <!-- Product item 02 end -->
+                    <!-- Product item 03 start -->
+                    <div class="citrusEuk__Product">
+                        <div class="citrusEuk-Product-card">
+                            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/puppy-food"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:3:puppyfood:shopnow"
+                                onclick="clickTrackLink(this);">
+                                <div class="citrusEuk-Product-cardImg">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Product-1.3_ExploreEukanubaProducts-PuppyFood"
+                                        alt="Puppy food bags" />
+                                </div>
+                                <div class="citrusEuk-Product-cardBody">
+                                    <h4>Puppy food</h4>
+                                    <p>Sets a strong foundation to help enable an active future.</p>
+                                </div>
+                            </a>
+                            <a class="citrusEuk__productCTA"
+                                href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/puppy-food"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:3:puppyfood:shopnow"
+                                onclick="clickTrackLink(this);">Shop Now</a>
+                        </div>
+                    </div>
+                    <!-- Product item 03 end -->
+                    <!-- Product item 04 start -->
+                    <div class="citrusEuk__Product">
+                        <div class="citrusEuk-Product-card">
+                            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/low-fat-dog-food"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:4:fitbodyweightcontrol:shopnow"
+                                onclick="clickTrackLink(this);">
+                                <div class="citrusEuk-Product-cardImg">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Product-1.4_ExploreEukanubaProducts-FitBodyWeightControl"
+                                        alt="Fit Body Weight Control dog food bags" />
+                                </div>
+                                <div class="citrusEuk-Product-cardBody">
+                                    <h4>Fit Body Weight Control</h4>
+                                    <p>Balanced recipes for energy and weight management needs.</p>
+                                </div>
+                            </a>
+                            <a class="citrusEuk__productCTA"
+                                href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/low-fat-dog-food"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:4:fitbodyweightcontrol:shopnow"
+                                onclick="clickTrackLink(this);">Shop Now</a>
+                        </div>
+                    </div>
+                    <!-- Product item 04 end -->
+                    <!-- Product item 05 start -->
+                    <div class="citrusEuk__Product">
+                        <div class="citrusEuk-Product-card">
+                            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/wet-dog-food"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:5:wetfood:shopnow"
+                                onclick="clickTrackLink(this);">
+                                <div class="citrusEuk-Product-cardImg">
+                                    <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Product-1.5_ExploreEukanubaProducts-WetFood"
+                                        alt="Assorted wet food in cans" />
+                                </div>
+                                <div class="citrusEuk-Product-cardBody">
+                                    <h4>Wet food</h4>
+                                    <p>Adds variety to their diet and helps increase fluid consumption.</p>
+                                </div>
+                            </a>
+                            <a class="citrusEuk__productCTA"
+                                href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/wet-dog-food"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:exploreeukanubaproducts:5:wetfood:shopnow"
+                                onclick="clickTrackLink(this);">Shop Now</a>
+                        </div>
+                    </div>
+                    <!-- Product item 05 end -->
+                </div>
+            </div>
+        </section>
+        <!----- Product list section End ----->
+
+        <!----- Video CTA section start ----->
+        <section class="citrusEuk__video_CTA">
+            <div class="Row">
+                <div class="Col order1">
+                    <div class="iframe">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/pC_0ZhjOdsA" title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="Col order2">
+                    <div class="videoText">
+                        <h2 class="sectionTitle">Unleash their unique potential</h2>
+                        <p>Activity-based formulas go beyond protein and fat to meet your dog’s needs.</p>
+                        <div class="citrusEuk__wrapper--commonCTA">
+                            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:videocontentmod:2:unleashtheiruniquepotential:shopnow"
+                                onclick="clickTrackLink(this);">
+                                <button>Shop Now</button>
+                            </a>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- Video CTA section end ----->
+
+        <!----- Benefits section start ----->
+        <section id="citrusEuk__RawFood">
+            <h2 class="citrusEuk__sectionTitle">Unlock the benefits of <br class="citrusEuk_mobile__show">Premium Performance</h2>
+            <div class="citrusEuk__RawFoodContainer">
+                <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba#facet:40992764608222332288311211111411647691101001171149711099101&productBeginIndex:0&orderBy:2&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                    manual_cm_sp="sponsoredbrandpage:eukanuba:benefitseducationalmod:1:unlockbenefitsofpremiumperformance:shopnow"
+                    onclick="clickTrackLink(this);">
+                    <div class="citrusEuk__category">
+                        <!-- Benefit 01 start -->
+                        <div class="citrusEuk__card">
+                            <div class="citrusEuk__card_img">
+                                <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Benefit-1.1-BenefitsEducationalMod-active"
+                                    alt="Outline of a dog moving fast, highlighting its speed">
+                            </div>
+                            <div class="citrusEuk__card-title">
+                                <h3>Formulas are nutritionally optimized for your active dog</h3>
+                            </div>
+                        </div>
+                        <!-- Benefit 01 end -->
+                        <!-- Benefit 02 start -->
+                        <div class="citrusEuk__card">
+                            <div class="citrusEuk__card_img">
+                                <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Benefit-1.2-BenefitsEducationalMod-exercise"
+                                alt="Shield icon">
+                            </div>
+                            <div class="citrusEuk__card-title">
+                                <h3>Adult diets help support post-exercise recovery</h3>
+                            </div>
+                        </div>
+                        <!-- Benefit 02 end -->
+                        <!-- Benefit 03 start -->
+                        <div class="citrusEuk__card">
+                            <div class="citrusEuk__card_img">
+                                <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Benefit-1.3-BenefitsEducationalMod-nutrient"
+                                alt="Outline of a sitting dog, outlining its inner GI tract">
+                            </div>
+                            <div class="citrusEuk__card-title">
+                                <h3>Gastrointestinal support for optimal nutrient delivery</h3>
+                            </div>
+                        </div>
+                        <!-- Benefit 03 end -->
+                        <!-- Benefit 04 start -->
+                        <div class="citrusEuk__card">
+                            <div class="citrusEuk__card_img">
+                                <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-Benefit-1.4-BenefitsEducationalMod-improve"
+                                alt="Outline of a dog’s head, highlighting the mind">
+                            </div>
+                            <div class="citrusEuk__card-title">
+                                <h3>Clinically proven DHA levels help improve puppy trainability</h3>
+                            </div>
+                        </div>     
+                        <!-- Benefit 04 end -->                   
+                    </div>
+                </a>
+            </div>
+            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba#facet:40992764608222332288311211111411647691101001171149711099101&productBeginIndex:0&orderBy:2&pageView:grid&minPrice:&maxPrice:&pageSize:&"
+                manual_cm_sp="sponsoredbrandpage:eukanuba:benefitseducationalmod:1:unlockbenefitsofpremiumperformance:shopnow"
+                onclick="clickTrackLink(this);"><button>Shop Now</button></a>       
+        </section>
+        <!----- Benefits section end ----->
+
+        <!----- Product Card section start ----->
+        <section class="citrusEuk__productCard_section">
+            <h2 class="citrusEuk__sectionTitle">Find the right formula for your <br class="citrusEuk_mobile__show">puppy based on activity level</h2>
+            <div class="citrusEuk__productCard_container">
+                <div class="citrusEuk__productCard_row">                    
+                    <div class="citrusEuk__productCard_item">
+                        <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/puppy-food"
+                            manual_cm_sp="sponsoredbrandpage:eukanuba:findtherightformulaforyourpuppy:1:moderatelyactive:shoppuppy"
+                                onclick="clickTrackLink(this);">
+                            <div class="citrusEuk__productCard_item_body">
+                                <div class="citrusEuk__productCard_item__Product_list">
+                                    <div class="citrusEuk__productCard_item__Product">
+                                        <h4><b>Small breed</b><br> &lt;12 Months</h4>
+                                    </div>
+                                    <div class="citrusEuk__productCard_item__Product">
+                                        <h4><b>Medium breed</b><br> &lt;12 Months</h4>                                    
+                                    </div>
+                                    <div class="citrusEuk__productCard_item__Product">
+                                        <h4><b>Large breed</b><br> &lt;24 Months</h4>                                    
+                                    </div>
+                                </div>
+                                <div class="citrusEuk__productCard_item__Product_list">
+                                    <div class="citrusEuk__productCard_item__Product">                                                              
+                                        <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-FindTheRightFormulaForYourPuppy-1.1"
+                                            alt="Bag of small breed puppy food">
+                                    </div>
+                                    <div class="citrusEuk__productCard_item__Product">                                  
+                                        <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-FindTheRightFormulaForYourPuppy-1.2"
+                                            alt="Bag of medium breed puppy food">
+                                    </div>
+                                    <div class="citrusEuk__productCard_item__Product">                                   
+                                        <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-FindTheRightFormulaForYourPuppy-1.3"
+                                            alt="Bag of large breed puppy food">
+                                    </div>
+                                </div>                            
+                            </div>
+                        </a>
+                        <div class="citrusEuk__productCard_item_footer">
+                            <h3>Moderately active</h3>
+                            <p>Future activities may include short hikes and runs, play and outdoor adventures.</p>
+                            <div class="citrusEuk__wrapper--commonCTA-no-bg">
+                                <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba/dog/dog-food/puppy-food"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:findtherightformulaforyourpuppy:1:moderatelyactive:shoppuppy"
+                                onclick="clickTrackLink(this);"><button>Shop Puppy</button></a>
+                            </div>     
+                        </div>
+                    </div>
+                    <div class="citrusEuk__productCard_item">
+                        <a href="https://www.petco.com/shop/en/petcostore/product/eukanuba-premium-performance-puppy-pro-dry-dog-food-28-lbs-3521477"
+                            manual_cm_sp="sponsoredbrandpage:eukanuba:findtherightformulaforyourpuppy:2:highlyactive:shoppuppypro"
+                                onclick="clickTrackLink(this);">
+                            <div class="citrusEuk__productCard_item_body">
+                                <div class="citrusEuk__productCard_item__Product_list two">
+                                    <div class="citrusEuk__productCard_item__Product">
+                                        <h4><b>Medium breed</b><br> &lt;12 Months</h4>
+                                    </div>
+                                    <div class="citrusEuk__productCard_item__Product">
+                                        <h4><b>Large breed</b><br> &lt;15 Months</h4>                                    
+                                    </div>
+                                </div>
+                                <div class="citrusEuk__productCard_item__Product_list two">
+                                    <div class="citrusEuk__productCard_item__Product">                                                              
+                                        <img src="https://assets.petco.com/petco/image/upload/f_auto,q_auto/CitrusEuk-FindTheRightFormulaForYourPuppy-2.1"
+                                            alt="Premium Performance Puppy Pro dog food">
+                                    </div>                                
+                                </div>                            
+                            </div>
+                        </a>
+                        <div class="citrusEuk__productCard_item_footer">
+                            <h3>Highly active</h3>
+                            <p>Future high-performance activities may include sporting, agility and working careers.</p>
+                            <div class="citrusEuk__wrapper--commonCTA-no-bg">
+                                <a href="https://www.petco.com/shop/en/petcostore/product/eukanuba-premium-performance-puppy-pro-dry-dog-food-28-lbs-3521477"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:findtherightformulaforyourpuppy:2:highlyactive:shoppuppypro"
+                                onclick="clickTrackLink(this);"><button>Shop Puppy PRO</button></a>
+                            </div>     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!----- Product Card section end ----->
+
+        <!------ Banner CTA section start ------>
+        <section class="citrusEuk__bannerCTA_section">
+            <div class="citrusEuk__bannerCTA_Row" 
+                title="German shorthaired pointer eating a bowl of Eukanuba Premium Performance food in a field">
+                <div class="citrusEuk__bannerCTA_Col order1">
+                    <div class="citrusEuk__bannerCTA_Content">
+                        <h2 class="citrusEuk__sectionTitle">Dedicated to healthy, active lives</h2>
+                        <p>For over 50 years, Eukanuba has used the power of nutritional science to influence ultimate performance.</p>
+                        <div class="citrusEuk__wrapper--commonCTA">
+                            <a href="https://www.petco.com/shop/en/petcostore/brand/eukanuba"
+                                manual_cm_sp="sponsoredbrandpage:eukanuba:brandbookendmod:1:dedicatedtohealthyactivelives:shopnow"
+                                onclick="clickTrackLink(this);"><button>Shop Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!------ Banner CTA section end ------>
+
+    </main>
+<!-- splide js library -->
+<script>
+    function r(n, t) {
+        for (var i = 0; i < t.length; i++) {
+          var r = t[i];
+          (r.enumerable = r.enumerable || !1),
+            (r.configurable = !0),
+            "value" in r && (r.writable = !0),
+            Object.defineProperty(n, r.key, r);
+        }
+      }
+      function Jt(n, t, i) {
+        t && r(n.prototype, t),
+          i && r(n, i),
+          Object.defineProperty(n, "prototype", { writable: !1 });
+      }
+      /*!
+       * Splide.js
+       * Version  : 4.1.2
+       * License  : MIT
+       * Copyright: 2022 Naotoshi Fujita
+       */
+      var n, t;
+      (n = this),
+        (t = function () {
+          "use strict";
+          var v = "(prefers-reduced-motion: reduce)",
+            G = 4,
+            rn = 5,
+            r = {
+              CREATED: 1,
+              MOUNTED: 2,
+              IDLE: 3,
+              MOVING: G,
+              SCROLLING: rn,
+              DRAGGING: 6,
+              DESTROYED: 7,
+            };
+          function D(n) {
+            n.length = 0;
+          }
+          function o(n, t, i) {
+            return Array.prototype.slice.call(n, t, i);
+          }
+          function R(n) {
+            return n.bind.apply(n, [null].concat(o(arguments, 1)));
+          }
+          function on() {}
+          var p = setTimeout;
+          function h(n) {
+            return requestAnimationFrame(n);
+          }
+          function u(n, t) {
+            return typeof t === n;
+          }
+          function un(n) {
+            return !c(n) && u("object", n);
+          }
+          var e = Array.isArray,
+            x = R(u, "function"),
+            C = R(u, "string"),
+            en = R(u, "undefined");
+          function c(n) {
+            return null === n;
+          }
+          function m(n) {
+            try {
+              return n instanceof (n.ownerDocument.defaultView || window).HTMLElement;
+            } catch (n) {
+              return !1;
+            }
+          }
+          function y(n) {
+            return e(n) ? n : [n];
+          }
+          function g(n, t) {
+            y(n).forEach(t);
+          }
+          function b(n, t) {
+            return -1 < n.indexOf(t);
+          }
+          function k(n, t) {
+            return n.push.apply(n, y(t)), n;
+          }
+          function A(t, n, i) {
+            t &&
+              g(n, function (n) {
+                n && t.classList[i ? "add" : "remove"](n);
+              });
+          }
+          function M(n, t) {
+            A(n, C(t) ? t.split(" ") : t, !0);
+          }
+          function L(n, t) {
+            g(t, n.appendChild.bind(n));
+          }
+          function O(n, i) {
+            g(n, function (n) {
+              var t = (i || n).parentNode;
+              t && t.insertBefore(n, i);
+            });
+          }
+          function cn(n, t) {
+            return m(n) && (n.msMatchesSelector || n.matches).call(n, t);
+          }
+          function S(n, t) {
+            n = n ? o(n.children) : [];
+            return t
+              ? n.filter(function (n) {
+                  return cn(n, t);
+                })
+              : n;
+          }
+          function fn(n, t) {
+            return t ? S(n, t)[0] : n.firstElementChild;
+          }
+          var E = Object.keys;
+          function w(t, i, n) {
+            t &&
+              (n ? E(t).reverse() : E(t)).forEach(function (n) {
+                "__proto__" !== n && i(t[n], n);
+              });
+          }
+          function an(r) {
+            return (
+              o(arguments, 1).forEach(function (i) {
+                w(i, function (n, t) {
+                  r[t] = i[t];
+                });
+              }),
+              r
+            );
+          }
+          function d(i) {
+            return (
+              o(arguments, 1).forEach(function (n) {
+                w(n, function (n, t) {
+                  e(n)
+                    ? (i[t] = n.slice())
+                    : un(n)
+                    ? (i[t] = d({}, un(i[t]) ? i[t] : {}, n))
+                    : (i[t] = n);
+                });
+              }),
+              i
+            );
+          }
+          function sn(t, n) {
+            g(n || E(t), function (n) {
+              delete t[n];
+            });
+          }
+          function P(n, i) {
+            g(n, function (t) {
+              g(i, function (n) {
+                t && t.removeAttribute(n);
+              });
+            });
+          }
+          function I(i, t, r) {
+            un(t)
+              ? w(t, function (n, t) {
+                  I(i, t, n);
+                })
+              : g(i, function (n) {
+                  c(r) || "" === r ? P(n, t) : n.setAttribute(t, String(r));
+                });
+          }
+          function j(n, t, i) {
+            n = document.createElement(n);
+            return t && (C(t) ? M : I)(n, t), i && L(i, n), n;
+          }
+          function _(n, t, i) {
+            if (en(i)) return getComputedStyle(n)[t];
+            c(i) || (n.style[t] = "" + i);
+          }
+          function ln(n, t) {
+            _(n, "display", t);
+          }
+          function dn(n) {
+            (n.setActive && n.setActive()) || n.focus({ preventScroll: !0 });
+          }
+          function z(n, t) {
+            return n.getAttribute(t);
+          }
+          function vn(n, t) {
+            return n && n.classList.contains(t);
+          }
+          function N(n) {
+            return n.getBoundingClientRect();
+          }
+          function T(n) {
+            g(n, function (n) {
+              n && n.parentNode && n.parentNode.removeChild(n);
+            });
+          }
+          function hn(n) {
+            return fn(new DOMParser().parseFromString(n, "text/html").body);
+          }
+          function F(n, t) {
+            n.preventDefault(),
+              t && (n.stopPropagation(), n.stopImmediatePropagation());
+          }
+          function pn(n, t) {
+            return n && n.querySelector(t);
+          }
+          function gn(n, t) {
+            return t ? o(n.querySelectorAll(t)) : [];
+          }
+          function X(n, t) {
+            A(n, t, !1);
+          }
+          function mn(n) {
+            return n.timeStamp;
+          }
+          function W(n) {
+            return C(n) ? n : n ? n + "px" : "";
+          }
+          var yn = "splide",
+            f = "data-" + yn;
+          function bn(n, t) {
+            if (!n) throw new Error("[" + yn + "] " + (t || ""));
+          }
+          var Y = Math.min,
+            wn = Math.max,
+            xn = Math.floor,
+            kn = Math.ceil,
+            U = Math.abs;
+          function Sn(n, t, i) {
+            return U(n - t) < i;
+          }
+          function En(n, t, i, r) {
+            var o = Y(t, i),
+              t = wn(t, i);
+            return r ? o < n && n < t : o <= n && n <= t;
+          }
+          function q(n, t, i) {
+            var r = Y(t, i),
+              t = wn(t, i);
+            return Y(wn(r, n), t);
+          }
+          function Ln(n) {
+            return (0 < n) - (n < 0);
+          }
+          function On(t, n) {
+            return (
+              g(n, function (n) {
+                t = t.replace("%s", "" + n);
+              }),
+              t
+            );
+          }
+          function An(n) {
+            return n < 10 ? "0" + n : "" + n;
+          }
+          var _n = {};
+          function zn() {
+            var c = [];
+            function i(n, i, r) {
+              g(n, function (t) {
+                t &&
+                  g(i, function (n) {
+                    n.split(" ").forEach(function (n) {
+                      n = n.split(".");
+                      r(t, n[0], n[1]);
+                    });
+                  });
+              });
+            }
+            return {
+              bind: function (n, t, u, e) {
+                i(n, t, function (n, t, i) {
+                  var r = "addEventListener" in n,
+                    o = r
+                      ? n.removeEventListener.bind(n, t, u, e)
+                      : n.removeListener.bind(n, u);
+                  r ? n.addEventListener(t, u, e) : n.addListener(u),
+                    c.push([n, t, i, u, o]);
+                });
+              },
+              unbind: function (n, t, o) {
+                i(n, t, function (t, i, r) {
+                  c = c.filter(function (n) {
+                    return (
+                      !!(
+                        n[0] !== t ||
+                        n[1] !== i ||
+                        n[2] !== r ||
+                        (o && n[3] !== o)
+                      ) || (n[4](), !1)
+                    );
+                  });
+                });
+              },
+              dispatch: function (n, t, i) {
+                var r;
+                return (
+                  "function" == typeof CustomEvent
+                    ? (r = new CustomEvent(t, { bubbles: !0, detail: i }))
+                    : (r = document.createEvent("CustomEvent")).initCustomEvent(
+                        t,
+                        !0,
+                        !1,
+                        i
+                      ),
+                  n.dispatchEvent(r),
+                  r
+                );
+              },
+              destroy: function () {
+                c.forEach(function (n) {
+                  n[4]();
+                }),
+                  D(c);
+              },
+            };
+          }
+          var B = "mounted",
+            H = "move",
+            Dn = "moved",
+            Mn = "click",
+            Pn = "active",
+            In = "inactive",
+            Rn = "visible",
+            Cn = "hidden",
+            J = "refresh",
+            K = "updated",
+            jn = "resize",
+            Nn = "resized",
+            Tn = "scroll",
+            V = "scrolled",
+            a = "destroy",
+            Gn = "navigation:mounted",
+            Fn = "autoplay:play",
+            Xn = "autoplay:pause",
+            Wn = "lazyload:loaded",
+            Yn = "sk",
+            Un = "sh";
+          function Q(n) {
+            var i = n ? n.event.bus : document.createDocumentFragment(),
+              r = zn();
+            return (
+              n && n.event.on(a, r.destroy),
+              an(r, {
+                bus: i,
+                on: function (n, t) {
+                  r.bind(i, y(n).join(" "), function (n) {
+                    t.apply(t, e(n.detail) ? n.detail : []);
+                  });
+                },
+                off: R(r.unbind, i),
+                emit: function (n) {
+                  r.dispatch(i, n, o(arguments, 1));
+                },
+              })
+            );
+          }
+          function qn(t, n, i, r) {
+            var o,
+              u,
+              e = Date.now,
+              c = 0,
+              f = !0,
+              a = 0;
+            function s() {
+              if (!f) {
+                if (
+                  ((c = t ? Y((e() - o) / t, 1) : 1),
+                  i && i(c),
+                  1 <= c && (n(), (o = e()), r && ++a >= r))
+                )
+                  return l();
+                u = h(s);
+              }
+            }
+            function l() {
+              f = !0;
+            }
+            function d() {
+              u && cancelAnimationFrame(u), (f = !(u = c = 0));
+            }
+            return {
+              start: function (n) {
+                n || d(), (o = e() - (n ? c * t : 0)), (f = !1), (u = h(s));
+              },
+              rewind: function () {
+                (o = e()), (c = 0), i && i(c);
+              },
+              pause: l,
+              cancel: d,
+              set: function (n) {
+                t = n;
+              },
+              isPaused: function () {
+                return f;
+              },
+            };
+          }
+          function s(n) {
+            var t = n;
+            return {
+              set: function (n) {
+                t = n;
+              },
+              is: function (n) {
+                return b(y(n), t);
+              },
+            };
+          }
+          var n = "Arrow",
+            Bn = n + "Left",
+            Hn = n + "Right",
+            t = n + "Up",
+            n = n + "Down",
+            Jn = "ttb",
+            l = {
+              width: ["height"],
+              left: ["top", "right"],
+              right: ["bottom", "left"],
+              x: ["y"],
+              X: ["Y"],
+              Y: ["X"],
+              ArrowLeft: [t, Hn],
+              ArrowRight: [n, Bn],
+            };
+          var Z = "role",
+            $ = "tabindex",
+            i = "aria-",
+            Kn = i + "controls",
+            Vn = i + "current",
+            Qn = i + "selected",
+            nn = i + "label",
+            Zn = i + "labelledby",
+            $n = i + "hidden",
+            nt = i + "orientation",
+            tt = i + "roledescription",
+            it = i + "live",
+            rt = i + "busy",
+            ot = i + "atomic",
+            ut = [Z, $, "disabled", Kn, Vn, nn, Zn, $n, nt, tt],
+            i = yn + "__",
+            et = yn,
+            ct = i + "track",
+            ft = i + "list",
+            at = i + "slide",
+            st = at + "--clone",
+            lt = at + "__container",
+            dt = i + "arrows",
+            vt = i + "arrow",
+            ht = vt + "--prev",
+            pt = vt + "--next",
+            gt = i + "pagination",
+            mt = gt + "__page",
+            yt = i + "progress" + "__bar",
+            bt = i + "toggle",
+            wt = i + "sr",
+            tn = "is-active",
+            xt = "is-prev",
+            kt = "is-next",
+            St = "is-visible",
+            Et = "is-loading",
+            Lt = "is-focus-in",
+            Ot = "is-overflow",
+            At = [tn, St, xt, kt, Et, Lt, Ot];
+          var _t = "touchstart mousedown",
+            zt = "touchmove mousemove",
+            Dt = "touchend touchcancel mouseup click";
+          var Mt = "slide",
+            Pt = "loop",
+            It = "fade";
+          function Rt(o, r, t, u) {
+            var e,
+              n = Q(o),
+              i = n.on,
+              c = n.emit,
+              f = n.bind,
+              a = o.Components,
+              s = o.root,
+              l = o.options,
+              d = l.isNavigation,
+              v = l.updateOnMove,
+              h = l.i18n,
+              p = l.pagination,
+              g = l.slideFocus,
+              m = a.Direction.resolve,
+              y = z(u, "style"),
+              b = z(u, nn),
+              w = -1 < t,
+              x = fn(u, "." + lt);
+            function k() {
+              var n = o.splides
+                .map(function (n) {
+                  n = n.splide.Components.Slides.getAt(r);
+                  return n ? n.slide.id : "";
+                })
+                .join(" ");
+              I(u, nn, On(h.slideX, (w ? t : r) + 1)),
+                I(u, Kn, n),
+                I(u, Z, g ? "button" : ""),
+                g && P(u, tt);
+            }
+            function S() {
+              e || E();
+            }
+            function E() {
+              var n, t, i;
+              e ||
+                ((n = o.index),
+                (i = L()) !== vn(u, tn) &&
+                  (A(u, tn, i), I(u, Vn, (d && i) || ""), c(i ? Pn : In, O)),
+                (i = (function () {
+                  if (o.is(It)) return L();
+                  var n = N(a.Elements.track),
+                    t = N(u),
+                    i = m("left", !0),
+                    r = m("right", !0);
+                  return xn(n[i]) <= kn(t[i]) && xn(t[r]) <= kn(n[r]);
+                })()),
+                (t = !i && (!L() || w)),
+                o.state.is([G, rn]) || I(u, $n, t || ""),
+                I(gn(u, l.focusableNodes || ""), $, t ? -1 : ""),
+                g && I(u, $, t ? -1 : 0),
+                i !== vn(u, St) && (A(u, St, i), c(i ? Rn : Cn, O)),
+                i ||
+                  document.activeElement !== u ||
+                  ((t = a.Slides.getAt(o.index)) && dn(t.slide)),
+                A(u, xt, r === n - 1),
+                A(u, kt, r === n + 1));
+            }
+            function L() {
+              var n = o.index;
+              return n === r || (l.cloneStatus && n === t);
+            }
+            var O = {
+              index: r,
+              slideIndex: t,
+              slide: u,
+              container: x,
+              isClone: w,
+              mount: function () {
+                w ||
+                  ((u.id = s.id + "-slide" + An(r + 1)),
+                  I(u, Z, p ? "tabpanel" : "group"),
+                  I(u, tt, h.slide),
+                  I(u, nn, b || On(h.slideLabel, [r + 1, o.length]))),
+                  f(u, "click", R(c, Mn, O)),
+                  f(u, "keydown", R(c, Yn, O)),
+                  i([Dn, Un, V], E),
+                  i(Gn, k),
+                  v && i(H, S);
+              },
+              destroy: function () {
+                (e = !0),
+                  n.destroy(),
+                  X(u, At),
+                  P(u, ut),
+                  I(u, "style", y),
+                  I(u, nn, b || "");
+              },
+              update: E,
+              style: function (n, t, i) {
+                _((i && x) || u, n, t);
+              },
+              isWithin: function (n, t) {
+                return (
+                  (n = U(n - r)),
+                  (n = w || (!l.rewind && !o.is(Pt)) ? n : Y(n, o.length - n)) <= t
+                );
+              },
+            };
+            return O;
+          }
+          var Ct = f + "-interval";
+          var jt = { passive: !1, capture: !0 };
+          var Nt = { Spacebar: " ", Right: Hn, Left: Bn, Up: t, Down: n };
+          function Tt(n) {
+            return (n = C(n) ? n : n.key), Nt[n] || n;
+          }
+          var Gt = "keydown";
+          var Ft = f + "-lazy",
+            Xt = Ft + "-srcset",
+            Wt = "[" + Ft + "], [" + Xt + "]";
+          var Yt = [" ", "Enter"];
+          var Ut = Object.freeze({
+              __proto__: null,
+              Media: function (r, n, o) {
+                var u = r.state,
+                  t = o.breakpoints || {},
+                  e = o.reducedMotion || {},
+                  i = zn(),
+                  c = [];
+                function f(n) {
+                  n && i.destroy();
+                }
+                function a(n, t) {
+                  t = matchMedia(t);
+                  i.bind(t, "change", s), c.push([n, t]);
+                }
+                function s() {
+                  var n = u.is(7),
+                    t = o.direction,
+                    i = c.reduce(function (n, t) {
+                      return d(n, t[1].matches ? t[0] : {});
+                    }, {});
+                  sn(o),
+                    l(i),
+                    o.destroy
+                      ? r.destroy("completely" === o.destroy)
+                      : n
+                      ? (f(!0), r.mount())
+                      : t !== o.direction && r.refresh();
+                }
+                function l(n, t, i) {
+                  d(o, n),
+                    t && d(Object.getPrototypeOf(o), n),
+                    (!i && u.is(1)) || r.emit(K, o);
+                }
+                return {
+                  setup: function () {
+                    var i = "min" === o.mediaQuery;
+                    E(t)
+                      .sort(function (n, t) {
+                        return i ? +n - +t : +t - +n;
+                      })
+                      .forEach(function (n) {
+                        a(t[n], "(" + (i ? "min" : "max") + "-width:" + n + "px)");
+                      }),
+                      a(e, v),
+                      s();
+                  },
+                  destroy: f,
+                  reduce: function (n) {
+                    matchMedia(v).matches && (n ? d(o, e) : sn(o, E(e)));
+                  },
+                  set: l,
+                };
+              },
+              Direction: function (n, t, o) {
+                return {
+                  resolve: function (n, t, i) {
+                    var r =
+                      "rtl" !== (i = i || o.direction) || t ? (i === Jn ? 0 : -1) : 1;
+                    return (
+                      (l[n] && l[n][r]) ||
+                      n.replace(/width|left|right/i, function (n, t) {
+                        n = l[n.toLowerCase()][r] || n;
+                        return 0 < t ? n.charAt(0).toUpperCase() + n.slice(1) : n;
+                      })
+                    );
+                  },
+                  orient: function (n) {
+                    return n * ("rtl" === o.direction ? 1 : -1);
+                  },
+                };
+              },
+              Elements: function (n, t, i) {
+                var r,
+                  o,
+                  u,
+                  e = Q(n),
+                  c = e.on,
+                  f = e.bind,
+                  a = n.root,
+                  s = i.i18n,
+                  l = {},
+                  d = [],
+                  v = [],
+                  h = [];
+                function p() {
+                  (r = y("." + ct)),
+                    (o = fn(r, "." + ft)),
+                    bn(r && o, "A track/list element is missing."),
+                    k(d, S(o, "." + at + ":not(." + st + ")")),
+                    w(
+                      {
+                        arrows: dt,
+                        pagination: gt,
+                        prev: ht,
+                        next: pt,
+                        bar: yt,
+                        toggle: bt,
+                      },
+                      function (n, t) {
+                        l[t] = y("." + n);
+                      }
+                    ),
+                    an(l, { root: a, track: r, list: o, slides: d });
+                  var n =
+                      a.id ||
+                      (function (n) {
+                        return "" + n + An((_n[n] = (_n[n] || 0) + 1));
+                      })(yn),
+                    t = i.role;
+                  (a.id = n),
+                    (r.id = r.id || n + "-track"),
+                    (o.id = o.id || n + "-list"),
+                    !z(a, Z) && "SECTION" !== a.tagName && t && I(a, Z, t),
+                    I(a, tt, s.carousel),
+                    I(o, Z, "presentation"),
+                    m();
+                }
+                function g(n) {
+                  var t = ut.concat("style");
+                  D(d), X(a, v), X(r, h), P([r, o], t), P(a, n ? t : ["style", tt]);
+                }
+                function m() {
+                  X(a, v),
+                    X(r, h),
+                    (v = b(et)),
+                    (h = b(ct)),
+                    M(a, v),
+                    M(r, h),
+                    I(a, nn, i.label),
+                    I(a, Zn, i.labelledby);
+                }
+                function y(n) {
+                  n = pn(a, n);
+                  return n &&
+                    (function (n, t) {
+                      if (x(n.closest)) return n.closest(t);
+                      for (var i = n; i && 1 === i.nodeType && !cn(i, t); )
+                        i = i.parentElement;
+                      return i;
+                    })(n, "." + et) === a
+                    ? n
+                    : void 0;
+                }
+                function b(n) {
+                  return [
+                    n + "--" + i.type,
+                    n + "--" + i.direction,
+                    i.drag && n + "--draggable",
+                    i.isNavigation && n + "--nav",
+                    n === et && tn,
+                  ];
+                }
+                return an(l, {
+                  setup: p,
+                  mount: function () {
+                    c(J, g),
+                      c(J, p),
+                      c(K, m),
+                      f(
+                        document,
+                        _t + " keydown",
+                        function (n) {
+                          u = "keydown" === n.type;
+                        },
+                        { capture: !0 }
+                      ),
+                      f(a, "focusin", function () {
+                        A(a, Lt, !!u);
+                      });
+                  },
+                  destroy: g,
+                });
+              },
+              Slides: function (r, o, u) {
+                var n = Q(r),
+                  t = n.on,
+                  e = n.emit,
+                  c = n.bind,
+                  f = (n = o.Elements).slides,
+                  a = n.list,
+                  s = [];
+                function i() {
+                  f.forEach(function (n, t) {
+                    d(n, t, -1);
+                  });
+                }
+                function l() {
+                  h(function (n) {
+                    n.destroy();
+                  }),
+                    D(s);
+                }
+                function d(n, t, i) {
+                  t = Rt(r, t, i, n);
+                  t.mount(),
+                    s.push(t),
+                    s.sort(function (n, t) {
+                      return n.index - t.index;
+                    });
+                }
+                function v(n) {
+                  return n
+                    ? p(function (n) {
+                        return !n.isClone;
+                      })
+                    : s;
+                }
+                function h(n, t) {
+                  v(t).forEach(n);
+                }
+                function p(t) {
+                  return s.filter(
+                    x(t)
+                      ? t
+                      : function (n) {
+                          return C(t) ? cn(n.slide, t) : b(y(t), n.index);
+                        }
+                  );
+                }
+                return {
+                  mount: function () {
+                    i(), t(J, l), t(J, i);
+                  },
+                  destroy: l,
+                  update: function () {
+                    h(function (n) {
+                      n.update();
+                    });
+                  },
+                  register: d,
+                  get: v,
+                  getIn: function (n) {
+                    var t = o.Controller,
+                      i = t.toIndex(n),
+                      r = t.hasFocus() ? 1 : u.perPage;
+                    return p(function (n) {
+                      return En(n.index, i, i + r - 1);
+                    });
+                  },
+                  getAt: function (n) {
+                    return p(n)[0];
+                  },
+                  add: function (n, o) {
+                    g(n, function (n) {
+                      var t, i, r;
+                      m((n = C(n) ? hn(n) : n)) &&
+                        ((t = f[o]) ? O(n, t) : L(a, n),
+                        M(n, u.classes.slide),
+                        (t = n),
+                        (i = R(e, jn)),
+                        (t = gn(t, "img")),
+                        (r = t.length)
+                          ? t.forEach(function (n) {
+                              c(n, "load error", function () {
+                                --r || i();
+                              });
+                            })
+                          : i());
+                    }),
+                      e(J);
+                  },
+                  remove: function (n) {
+                    T(
+                      p(n).map(function (n) {
+                        return n.slide;
+                      })
+                    ),
+                      e(J);
+                  },
+                  forEach: h,
+                  filter: p,
+                  style: function (t, i, r) {
+                    h(function (n) {
+                      n.style(t, i, r);
+                    });
+                  },
+                  getLength: function (n) {
+                    return (n ? f : s).length;
+                  },
+                  isEnough: function () {
+                    return s.length > u.perPage;
+                  },
+                };
+              },
+              Layout: function (t, n, i) {
+                var r,
+                  o,
+                  u,
+                  e = (a = Q(t)).on,
+                  c = a.bind,
+                  f = a.emit,
+                  a = n.Slides,
+                  s = n.Direction.resolve,
+                  l = (n = n.Elements).root,
+                  d = n.track,
+                  v = n.list,
+                  h = a.getAt,
+                  p = a.style;
+                function g() {
+                  (r = i.direction === Jn),
+                    _(l, "maxWidth", W(i.width)),
+                    _(d, s("paddingLeft"), y(!1)),
+                    _(d, s("paddingRight"), y(!0)),
+                    m(!0);
+                }
+                function m(n) {
+                  var t = N(l);
+                  (!n && o.width === t.width && o.height === t.height) ||
+                    (_(
+                      d,
+                      "height",
+                      (function () {
+                        var n = "";
+                        r &&
+                          (bn((n = b()), "height or heightRatio is missing."),
+                          (n = "calc(" + n + " - " + y(!1) + " - " + y(!0) + ")"));
+                        return n;
+                      })()
+                    ),
+                    p(s("marginRight"), W(i.gap)),
+                    p(
+                      "width",
+                      i.autoWidth ? null : W(i.fixedWidth) || (r ? "" : w())
+                    ),
+                    p(
+                      "height",
+                      W(i.fixedHeight) || (r ? (i.autoHeight ? null : w()) : b()),
+                      !0
+                    ),
+                    (o = t),
+                    f(Nn),
+                    u !== (u = O()) && (A(l, Ot, u), f("overflow", u)));
+                }
+                function y(n) {
+                  var t = i.padding,
+                    n = s(n ? "right" : "left");
+                  return (t && W(t[n] || (un(t) ? 0 : t))) || "0px";
+                }
+                function b() {
+                  return W(i.height || N(v).width * i.heightRatio);
+                }
+                function w() {
+                  var n = W(i.gap);
+                  return (
+                    "calc((100%" +
+                    (n && " + " + n) +
+                    ")/" +
+                    (i.perPage || 1) +
+                    (n && " - " + n) +
+                    ")"
+                  );
+                }
+                function x() {
+                  return N(v)[s("width")];
+                }
+                function k(n, t) {
+                  n = h(n || 0);
+                  return n ? N(n.slide)[s("width")] + (t ? 0 : L()) : 0;
+                }
+                function S(n, t) {
+                  var i,
+                    n = h(n);
+                  return n
+                    ? ((n = N(n.slide)[s("right")]),
+                      (i = N(v)[s("left")]),
+                      U(n - i) + (t ? 0 : L()))
+                    : 0;
+                }
+                function E(n) {
+                  return S(t.length - 1) - S(0) + k(0, n);
+                }
+                function L() {
+                  var n = h(0);
+                  return (n && parseFloat(_(n.slide, s("marginRight")))) || 0;
+                }
+                function O() {
+                  return t.is(It) || E(!0) > x();
+                }
+                return {
+                  mount: function () {
+                    var n, t, i;
+                    g(),
+                      c(
+                        window,
+                        "resize load",
+                        ((n = R(f, jn)),
+                        (i = qn(t || 0, n, null, 1)),
+                        function () {
+                          i.isPaused() && i.start();
+                        })
+                      ),
+                      e([K, J], g),
+                      e(jn, m);
+                  },
+                  resize: m,
+                  listSize: x,
+                  slideSize: k,
+                  sliderSize: E,
+                  totalSize: S,
+                  getPadding: function (n) {
+                    return (
+                      parseFloat(_(d, s("padding" + (n ? "Right" : "Left")))) || 0
+                    );
+                  },
+                  isOverflow: O,
+                };
+              },
+              Clones: function (c, i, f) {
+                var t,
+                  r = Q(c),
+                  n = r.on,
+                  a = i.Elements,
+                  s = i.Slides,
+                  o = i.Direction.resolve,
+                  l = [];
+                function u() {
+                  if ((n(J, d), n([K, jn], v), (t = h()))) {
+                    var o = t,
+                      u = s.get().slice(),
+                      e = u.length;
+                    if (e) {
+                      for (; u.length < o; ) k(u, u);
+                      k(u.slice(-o), u.slice(0, o)).forEach(function (n, t) {
+                        var i = t < o,
+                          r = (function (n, t) {
+                            n = n.cloneNode(!0);
+                            return (
+                              M(n, f.classes.clone),
+                              (n.id = c.root.id + "-clone" + An(t + 1)),
+                              n
+                            );
+                          })(n.slide, t);
+                        i ? O(r, u[0].slide) : L(a.list, r),
+                          k(l, r),
+                          s.register(r, t - o + (i ? 0 : e), n.index);
+                      });
+                    }
+                    i.Layout.resize(!0);
+                  }
+                }
+                function d() {
+                  e(), u();
+                }
+                function e() {
+                  T(l), D(l), r.destroy();
+                }
+                function v() {
+                  var n = h();
+                  t !== n && (t < n || !n) && r.emit(J);
+                }
+                function h() {
+                  var n,
+                    t = f.clones;
+                  return (
+                    c.is(Pt)
+                      ? en(t) &&
+                        (t =
+                          ((n = f[o("fixedWidth")] && i.Layout.slideSize(0)) &&
+                            kn(N(a.track)[o("width")] / n)) ||
+                          (f[o("autoWidth")] && c.length) ||
+                          2 * f.perPage)
+                      : (t = 0),
+                    t
+                  );
+                }
+                return { mount: u, destroy: e };
+              },
+              Move: function (r, c, o) {
+                var e,
+                  n = Q(r),
+                  t = n.on,
+                  f = n.emit,
+                  a = r.state.set,
+                  u = (n = c.Layout).slideSize,
+                  i = n.getPadding,
+                  s = n.totalSize,
+                  l = n.listSize,
+                  d = n.sliderSize,
+                  v = (n = c.Direction).resolve,
+                  h = n.orient,
+                  p = (n = c.Elements).list,
+                  g = n.track;
+                function m() {
+                  c.Controller.isBusy() ||
+                    (c.Scroll.cancel(), y(r.index), c.Slides.update());
+                }
+                function y(n) {
+                  b(S(n, !0));
+                }
+                function b(n, t) {
+                  r.is(It) ||
+                    ((t = t
+                      ? n
+                      : (function (n) {
+                          {
+                            var t, i;
+                            r.is(Pt) &&
+                              ((t = k(n)),
+                              (i = t > c.Controller.getEnd()),
+                              (t < 0 || i) && (n = w(n, i)));
+                          }
+                          return n;
+                        })(n)),
+                    _(p, "transform", "translate" + v("X") + "(" + t + "px)"),
+                    n !== t && f(Un));
+                }
+                function w(n, t) {
+                  var i = n - L(t),
+                    r = d();
+                  return (n -= h(r * (kn(U(i) / r) || 1)) * (t ? 1 : -1));
+                }
+                function x() {
+                  b(E(), !0), e.cancel();
+                }
+                function k(n) {
+                  for (
+                    var t = c.Slides.get(), i = 0, r = 1 / 0, o = 0;
+                    o < t.length;
+                    o++
+                  ) {
+                    var u = t[o].index,
+                      e = U(S(u, !0) - n);
+                    if (!(e <= r)) break;
+                    (r = e), (i = u);
+                  }
+                  return i;
+                }
+                function S(n, t) {
+                  var i = h(
+                    s(n - 1) -
+                      ((n = n),
+                      "center" === (i = o.focus)
+                        ? (l() - u(n, !0)) / 2
+                        : +i * u(n) || 0)
+                  );
+                  return t
+                    ? ((n = i),
+                      (n = o.trimSpace && r.is(Mt) ? q(n, 0, h(d(!0) - l())) : n))
+                    : i;
+                }
+                function E() {
+                  var n = v("left");
+                  return N(p)[n] - N(g)[n] + h(i(!1));
+                }
+                function L(n) {
+                  return S(n ? c.Controller.getEnd() : 0, !!o.trimSpace);
+                }
+                return {
+                  mount: function () {
+                    (e = c.Transition), t([B, Nn, K, J], m);
+                  },
+                  move: function (n, t, i, r) {
+                    var o, u;
+                    n !== t &&
+                      ((o = i < n),
+                      (u = h(w(E(), o))),
+                      o ? 0 <= u : u <= p[v("scrollWidth")] - N(g)[v("width")]) &&
+                      (x(), b(w(E(), i < n), !0)),
+                      a(G),
+                      f(H, t, i, n),
+                      e.start(t, function () {
+                        a(3), f(Dn, t, i, n), r && r();
+                      });
+                  },
+                  jump: y,
+                  translate: b,
+                  shift: w,
+                  cancel: x,
+                  toIndex: k,
+                  toPosition: S,
+                  getPosition: E,
+                  getLimit: L,
+                  exceededLimit: function (n, t) {
+                    t = en(t) ? E() : t;
+                    var i = !0 !== n && h(t) < h(L(!1)),
+                      n = !1 !== n && h(t) > h(L(!0));
+                    return i || n;
+                  },
+                  reposition: m,
+                };
+              },
+              Controller: function (o, u, e) {
+                var c,
+                  f,
+                  a,
+                  s,
+                  n = Q(o),
+                  t = n.on,
+                  i = n.emit,
+                  l = u.Move,
+                  d = l.getPosition,
+                  r = l.getLimit,
+                  v = l.toPosition,
+                  h = (n = u.Slides).isEnough,
+                  p = n.getLength,
+                  g = e.omitEnd,
+                  m = o.is(Pt),
+                  y = o.is(Mt),
+                  b = R(L, !1),
+                  w = R(L, !0),
+                  x = e.start || 0,
+                  k = x;
+                function S() {
+                  (f = p(!0)), (a = e.perMove), (s = e.perPage), (c = _());
+                  var n = q(x, 0, g ? c : f - 1);
+                  n !== x && ((x = n), l.reposition());
+                }
+                function E() {
+                  c !== _() && i("ei");
+                }
+                function L(n, t) {
+                  var i = a || (P() ? 1 : s),
+                    i = O(x + i * (n ? -1 : 1), x, !(a || P()));
+                  return -1 === i && y && !Sn(d(), r(!n), 1)
+                    ? n
+                      ? 0
+                      : c
+                    : t
+                    ? i
+                    : A(i);
+                }
+                function O(n, t, i) {
+                  var r;
+                  return (
+                    h() || P()
+                      ? ((r = (function (n) {
+                          if (y && "move" === e.trimSpace && n !== x)
+                            for (
+                              var t = d();
+                              t === v(n, !0) && En(n, 0, o.length - 1, !e.rewind);
+      
+                            )
+                              n < x ? --n : ++n;
+                          return n;
+                        })(n)) !== n && ((t = n), (n = r), (i = !1)),
+                        n < 0 || c < n
+                          ? (n =
+                              a || (!En(0, n, t, !0) && !En(c, t, n, !0))
+                                ? m
+                                  ? i
+                                    ? n < 0
+                                      ? -(f % s || s)
+                                      : f
+                                    : n
+                                  : e.rewind
+                                  ? n < 0
+                                    ? c
+                                    : 0
+                                  : -1
+                                : z(D(n)))
+                          : i && n !== t && (n = z(D(t) + (n < t ? -1 : 1))))
+                      : (n = -1),
+                    n
+                  );
+                }
+                function A(n) {
+                  return m ? (n + f) % f || 0 : n;
+                }
+                function _() {
+                  for (var n = f - (P() || (m && a) ? 1 : s); g && 0 < n--; )
+                    if (v(f - 1, !0) !== v(n, !0)) {
+                      n++;
+                      break;
+                    }
+                  return q(n, 0, f - 1);
+                }
+                function z(n) {
+                  return q(P() ? n : s * n, 0, c);
+                }
+                function D(n) {
+                  return P() ? Y(n, c) : xn((c <= n ? f - 1 : n) / s);
+                }
+                function M(n) {
+                  n !== x && ((k = x), (x = n));
+                }
+                function P() {
+                  return !en(e.focus) || e.isNavigation;
+                }
+                function I() {
+                  return o.state.is([G, rn]) && !!e.waitForTransition;
+                }
+                return {
+                  mount: function () {
+                    S(), t([K, J, "ei"], S), t(Nn, E);
+                  },
+                  go: function (n, t, i) {
+                    var r;
+                    I() ||
+                      (-1 <
+                        (r = A(
+                          (n = (function (n) {
+                            var t = x;
+                            {
+                              var i, r;
+                              C(n)
+                                ? ((r = n.match(/([+\-<>])(\d+)?/) || []),
+                                  (i = r[1]),
+                                  (r = r[2]),
+                                  "+" === i || "-" === i
+                                    ? (t = O(x + +("" + i + (+r || 1)), x))
+                                    : ">" === i
+                                    ? (t = r ? z(+r) : b(!0))
+                                    : "<" === i && (t = w(!0)))
+                                : (t = m ? n : q(n, 0, c));
+                            }
+                            return t;
+                          })(n))
+                        )) &&
+                        (t || r !== x) &&
+                        (M(r), l.move(n, r, k, i)));
+                  },
+                  scroll: function (n, t, i, r) {
+                    u.Scroll.scroll(n, t, i, function () {
+                      var n = A(l.toIndex(d()));
+                      M(g ? Y(n, c) : n), r && r();
+                    });
+                  },
+                  getNext: b,
+                  getPrev: w,
+                  getAdjacent: L,
+                  getEnd: _,
+                  setIndex: M,
+                  getIndex: function (n) {
+                    return n ? k : x;
+                  },
+                  toIndex: z,
+                  toPage: D,
+                  toDest: function (n) {
+                    return (n = l.toIndex(n)), y ? q(n, 0, c) : n;
+                  },
+                  hasFocus: P,
+                  isBusy: I,
+                };
+              },
+              Arrows: function (o, n, t) {
+                var i,
+                  r,
+                  u = Q(o),
+                  e = u.on,
+                  c = u.bind,
+                  f = u.emit,
+                  a = t.classes,
+                  s = t.i18n,
+                  l = n.Elements,
+                  d = n.Controller,
+                  v = l.arrows,
+                  h = l.track,
+                  p = v,
+                  g = l.prev,
+                  m = l.next,
+                  y = {};
+                function b() {
+                  var n = t.arrows;
+                  !n ||
+                    (g && m) ||
+                    ((p = v || j("div", a.arrows)),
+                    (g = S(!0)),
+                    (m = S(!1)),
+                    (i = !0),
+                    L(p, [g, m]),
+                    v || O(p, h)),
+                    g &&
+                      m &&
+                      (an(y, { prev: g, next: m }),
+                      ln(p, n ? "" : "none"),
+                      M(p, (r = dt + "--" + t.direction)),
+                      n &&
+                        (e([B, Dn, J, V, "ei"], E),
+                        c(m, "click", R(k, ">")),
+                        c(g, "click", R(k, "<")),
+                        E(),
+                        I([g, m], Kn, h.id),
+                        f("arrows:mounted", g, m))),
+                    e(K, w);
+                }
+                function w() {
+                  x(), b();
+                }
+                function x() {
+                  u.destroy(),
+                    X(p, r),
+                    i ? (T(v ? [g, m] : p), (g = m = null)) : P([g, m], ut);
+                }
+                function k(n) {
+                  d.go(n, !0);
+                }
+                function S(n) {
+                  return hn(
+                    '<button class="' +
+                      a.arrow +
+                      " " +
+                      (n ? a.prev : a.next) +
+                      '" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" focusable="false"><path d="' +
+                      (t.arrowPath ||
+                        "m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4.4-4.4-14.6-14.6z") +
+                      '" />'
+                  );
+                }
+                function E() {
+                  var n, t, i, r;
+                  g &&
+                    m &&
+                    ((r = o.index),
+                    (n = d.getPrev()),
+                    (t = d.getNext()),
+                    (i = -1 < n && r < n ? s.last : s.prev),
+                    (r = -1 < t && t < r ? s.first : s.next),
+                    (g.disabled = n < 0),
+                    (m.disabled = t < 0),
+                    I(g, nn, i),
+                    I(m, nn, r),
+                    f("arrows:updated", g, m, n, t));
+                }
+                return { arrows: y, mount: b, destroy: x, update: E };
+              },
+              Autoplay: function (n, t, i) {
+                var r,
+                  o,
+                  u = Q(n),
+                  e = u.on,
+                  c = u.bind,
+                  f = u.emit,
+                  a = qn(i.interval, n.go.bind(n, ">"), function (n) {
+                    var t = l.bar;
+                    t && _(t, "width", 100 * n + "%"), f("autoplay:playing", n);
+                  }),
+                  s = a.isPaused,
+                  l = t.Elements,
+                  d = (u = t.Elements).root,
+                  v = u.toggle,
+                  h = i.autoplay,
+                  p = "pause" === h;
+                function g() {
+                  s() &&
+                    t.Slides.isEnough() &&
+                    (a.start(!i.resetProgress), (o = r = p = !1), b(), f(Fn));
+                }
+                function m(n) {
+                  (p = !!(n = void 0 === n ? !0 : n)), b(), s() || (a.pause(), f(Xn));
+                }
+                function y() {
+                  p || (r || o ? m(!1) : g());
+                }
+                function b() {
+                  v && (A(v, tn, !p), I(v, nn, i.i18n[p ? "play" : "pause"]));
+                }
+                function w(n) {
+                  n = t.Slides.getAt(n);
+                  a.set((n && +z(n.slide, Ct)) || i.interval);
+                }
+                return {
+                  mount: function () {
+                    h &&
+                      (i.pauseOnHover &&
+                        c(d, "mouseenter mouseleave", function (n) {
+                          (r = "mouseenter" === n.type), y();
+                        }),
+                      i.pauseOnFocus &&
+                        c(d, "focusin focusout", function (n) {
+                          (o = "focusin" === n.type), y();
+                        }),
+                      v &&
+                        c(v, "click", function () {
+                          p ? g() : m(!0);
+                        }),
+                      e([H, Tn, J], a.rewind),
+                      e(H, w),
+                      v && I(v, Kn, l.track.id),
+                      p || g(),
+                      b());
+                  },
+                  destroy: a.cancel,
+                  play: g,
+                  pause: m,
+                  isPaused: s,
+                };
+              },
+              Cover: function (n, t, i) {
+                var r = Q(n).on;
+                function o(i) {
+                  t.Slides.forEach(function (n) {
+                    var t = fn(n.container || n.slide, "img");
+                    t && t.src && u(i, t, n);
+                  });
+                }
+                function u(n, t, i) {
+                  i.style(
+                    "background",
+                    n ? 'center/cover no-repeat url("' + t.src + '")' : "",
+                    !0
+                  ),
+                    ln(t, n ? "none" : "");
+                }
+                return {
+                  mount: function () {
+                    i.cover && (r(Wn, R(u, !0)), r([B, K, J], R(o, !0)));
+                  },
+                  destroy: R(o, !1),
+                };
+              },
+              Scroll: function (n, c, u) {
+                var f,
+                  a,
+                  t = Q(n),
+                  i = t.on,
+                  s = t.emit,
+                  l = n.state.set,
+                  d = c.Move,
+                  v = d.getPosition,
+                  e = d.getLimit,
+                  h = d.exceededLimit,
+                  p = d.translate,
+                  g = n.is(Mt),
+                  m = 1;
+                function y(n, t, i, r, o) {
+                  var u,
+                    e = v(),
+                    i =
+                      (x(),
+                      !i ||
+                        (g && h()) ||
+                        ((i = c.Layout.sliderSize()),
+                        (u = Ln(n) * i * xn(U(n) / i) || 0),
+                        (n = d.toPosition(c.Controller.toDest(n % i)) + u)),
+                      Sn(e, n, 1));
+                  (m = 1),
+                    (t = i ? 0 : t || wn(U(n - e) / 1.5, 800)),
+                    (a = r),
+                    (f = qn(t, b, R(w, e, n, o), 1)),
+                    l(rn),
+                    s(Tn),
+                    f.start();
+                }
+                function b() {
+                  l(3), a && a(), s(V);
+                }
+                function w(n, t, i, r) {
+                  var o = v(),
+                    r =
+                      (n +
+                        (t - n) *
+                          ((t = r),
+                          (n = u.easingFunc) ? n(t) : 1 - Math.pow(1 - t, 4)) -
+                        o) *
+                      m;
+                  p(o + r),
+                    g &&
+                      !i &&
+                      h() &&
+                      ((m *= 0.6), U(r) < 10 && y(e(h(!0)), 600, !1, a, !0));
+                }
+                function x() {
+                  f && f.cancel();
+                }
+                function r() {
+                  f && !f.isPaused() && (x(), b());
+                }
+                return {
+                  mount: function () {
+                    i(H, x), i([K, J], r);
+                  },
+                  destroy: x,
+                  scroll: y,
+                  cancel: r,
+                };
+              },
+              Drag: function (e, o, c) {
+                var f,
+                  t,
+                  u,
+                  a,
+                  s,
+                  l,
+                  d,
+                  v,
+                  n = Q(e),
+                  i = n.on,
+                  h = n.emit,
+                  p = n.bind,
+                  g = n.unbind,
+                  m = e.state,
+                  y = o.Move,
+                  b = o.Scroll,
+                  w = o.Controller,
+                  x = o.Elements.track,
+                  k = o.Media.reduce,
+                  r = (n = o.Direction).resolve,
+                  S = n.orient,
+                  E = y.getPosition,
+                  L = y.exceededLimit,
+                  O = !1;
+                function j() {
+                  var n = c.drag;
+                  C(!n), (a = "free" === n);
+                }
+                function N(n) {
+                  var t, i, r;
+                  (l = !1),
+                    d ||
+                      ((t = R(n)),
+                      (i = n.target),
+                      (r = c.noDrag),
+                      cn(i, "." + mt + ", ." + vt) ||
+                        (r && cn(i, r)) ||
+                        (!t && n.button) ||
+                        (w.isBusy()
+                          ? F(n, !0)
+                          : ((v = t ? x : window),
+                            (s = m.is([G, rn])),
+                            (u = null),
+                            p(v, zt, A, jt),
+                            p(v, Dt, _, jt),
+                            y.cancel(),
+                            b.cancel(),
+                            z(n))));
+                }
+                function A(n) {
+                  var t, i, r, o, u;
+                  m.is(6) || (m.set(6), h("drag")),
+                    n.cancelable &&
+                      (s
+                        ? (y.translate(f + D(n) / (O && e.is(Mt) ? 5 : 1)),
+                          (u = 200 < M(n)),
+                          (t = O !== (O = L())),
+                          (u || t) && z(n),
+                          (l = !0),
+                          h("dragging"),
+                          F(n))
+                        : U(D((u = n))) > U(D(u, !0)) &&
+                          ((t = n),
+                          (i = c.dragMinThreshold),
+                          (r = un(i)),
+                          (o = (r && i.mouse) || 0),
+                          (r = (r ? i.touch : +i) || 10),
+                          (s = U(D(t)) > (R(t) ? r : o)),
+                          F(n)));
+                }
+                function _(n) {
+                  var t, i, r;
+                  m.is(6) && (m.set(3), h("dragged")),
+                    s &&
+                      ((i = (function (n) {
+                        return (
+                          E() +
+                          Ln(n) *
+                            Y(
+                              U(n) * (c.flickPower || 600),
+                              a ? 1 / 0 : o.Layout.listSize() * (c.flickMaxPages || 1)
+                            )
+                        );
+                      })(
+                        (t = (function (n) {
+                          if (e.is(Pt) || !O) {
+                            var t = M(n);
+                            if (t && t < 200) return D(n) / t;
+                          }
+                          return 0;
+                        })((t = n)))
+                      )),
+                      (r = c.rewind && c.rewindByDrag),
+                      k(!1),
+                      a
+                        ? w.scroll(i, 0, c.snap)
+                        : e.is(It)
+                        ? w.go(S(Ln(t)) < 0 ? (r ? "<" : "-") : r ? ">" : "+")
+                        : e.is(Mt) && O && r
+                        ? w.go(L(!0) ? ">" : "<")
+                        : w.go(w.toDest(i), !0),
+                      k(!0),
+                      F(n)),
+                    g(v, zt, A),
+                    g(v, Dt, _),
+                    (s = !1);
+                }
+                function T(n) {
+                  !d && l && F(n, !0);
+                }
+                function z(n) {
+                  (u = t), (t = n), (f = E());
+                }
+                function D(n, t) {
+                  return I(n, t) - I(P(n), t);
+                }
+                function M(n) {
+                  return mn(n) - mn(P(n));
+                }
+                function P(n) {
+                  return (t === n && u) || t;
+                }
+                function I(n, t) {
+                  return (R(n) ? n.changedTouches[0] : n)["page" + r(t ? "Y" : "X")];
+                }
+                function R(n) {
+                  return "undefined" != typeof TouchEvent && n instanceof TouchEvent;
+                }
+                function C(n) {
+                  d = n;
+                }
+                return {
+                  mount: function () {
+                    p(x, zt, on, jt),
+                      p(x, Dt, on, jt),
+                      p(x, _t, N, jt),
+                      p(x, "click", T, { capture: !0 }),
+                      p(x, "dragstart", F),
+                      i([B, K], j);
+                  },
+                  disable: C,
+                  isDragging: function () {
+                    return s;
+                  },
+                };
+              },
+              Keyboard: function (t, n, i) {
+                var r,
+                  o,
+                  u = Q(t),
+                  e = u.on,
+                  c = u.bind,
+                  f = u.unbind,
+                  a = t.root,
+                  s = n.Direction.resolve;
+                function l() {
+                  var n = i.keyboard;
+                  n && ((r = "global" === n ? window : a), c(r, Gt, h));
+                }
+                function d() {
+                  f(r, Gt);
+                }
+                function v() {
+                  var n = o;
+                  (o = !0),
+                    p(function () {
+                      o = n;
+                    });
+                }
+                function h(n) {
+                  o || ((n = Tt(n)) === s(Bn) ? t.go("<") : n === s(Hn) && t.go(">"));
+                }
+                return {
+                  mount: function () {
+                    l(), e(K, d), e(K, l), e(H, v);
+                  },
+                  destroy: d,
+                  disable: function (n) {
+                    o = n;
+                  },
+                };
+              },
+              LazyLoad: function (i, n, o) {
+                var t = Q(i),
+                  r = t.on,
+                  u = t.off,
+                  e = t.bind,
+                  c = t.emit,
+                  f = "sequential" === o.lazyLoad,
+                  a = [Dn, V],
+                  s = [];
+                function l() {
+                  D(s),
+                    n.Slides.forEach(function (r) {
+                      gn(r.slide, Wt).forEach(function (n) {
+                        var t = z(n, Ft),
+                          i = z(n, Xt);
+                        (t === n.src && i === n.srcset) ||
+                          ((t = o.classes.spinner),
+                          (t = fn((i = n.parentElement), "." + t) || j("span", t, i)),
+                          s.push([n, r, t]),
+                          n.src || ln(n, "none"));
+                      });
+                    }),
+                    (f ? p : (u(a), r(a, d), d))();
+                }
+                function d() {
+                  (s = s.filter(function (n) {
+                    var t = o.perPage * ((o.preloadPages || 1) + 1) - 1;
+                    return !n[1].isWithin(i.index, t) || v(n);
+                  })).length || u(a);
+                }
+                function v(n) {
+                  var t = n[0];
+                  M(n[1].slide, Et),
+                    e(t, "load error", R(h, n)),
+                    I(t, "src", z(t, Ft)),
+                    I(t, "srcset", z(t, Xt)),
+                    P(t, Ft),
+                    P(t, Xt);
+                }
+                function h(n, t) {
+                  var i = n[0],
+                    r = n[1];
+                  X(r.slide, Et),
+                    "error" !== t.type && (T(n[2]), ln(i, ""), c(Wn, i, r), c(jn)),
+                    f && p();
+                }
+                function p() {
+                  s.length && v(s.shift());
+                }
+                return {
+                  mount: function () {
+                    o.lazyLoad && (l(), r(J, l));
+                  },
+                  destroy: R(D, s),
+                  check: d,
+                };
+              },
+              Pagination: function (l, n, d) {
+                var v,
+                  h,
+                  t = Q(l),
+                  p = t.on,
+                  g = t.emit,
+                  m = t.bind,
+                  y = n.Slides,
+                  b = n.Elements,
+                  w = n.Controller,
+                  x = w.hasFocus,
+                  r = w.getIndex,
+                  e = w.go,
+                  c = n.Direction.resolve,
+                  k = b.pagination,
+                  S = [];
+                function E() {
+                  v && (T(k ? o(v.children) : v), X(v, h), D(S), (v = null)),
+                    t.destroy();
+                }
+                function L(n) {
+                  e(">" + n, !0);
+                }
+                function O(n, t) {
+                  var i = S.length,
+                    r = Tt(t),
+                    o = A(),
+                    u = -1,
+                    o =
+                      (r === c(Hn, !1, o)
+                        ? (u = ++n % i)
+                        : r === c(Bn, !1, o)
+                        ? (u = (--n + i) % i)
+                        : "Home" === r
+                        ? (u = 0)
+                        : "End" === r && (u = i - 1),
+                      S[u]);
+                  o && (dn(o.button), e(">" + u), F(t, !0));
+                }
+                function A() {
+                  return d.paginationDirection || d.direction;
+                }
+                function _(n) {
+                  return S[w.toPage(n)];
+                }
+                function z() {
+                  var n,
+                    t = _(r(!0)),
+                    i = _(r());
+                  t && (X((n = t.button), tn), P(n, Qn), I(n, $, -1)),
+                    i && (M((n = i.button), tn), I(n, Qn, !0), I(n, $, "")),
+                    g("pagination:updated", { list: v, items: S }, t, i);
+                }
+                return {
+                  items: S,
+                  mount: function n() {
+                    E(), p([K, J, "ei"], n);
+                    var t = d.pagination;
+                    if ((k && ln(k, t ? "" : "none"), t)) {
+                      p([H, Tn, V], z);
+                      var t = l.length,
+                        i = d.classes,
+                        r = d.i18n,
+                        o = d.perPage,
+                        u = x() ? w.getEnd() + 1 : kn(t / o);
+                      M(
+                        (v = k || j("ul", i.pagination, b.track.parentElement)),
+                        (h = gt + "--" + A())
+                      ),
+                        I(v, Z, "tablist"),
+                        I(v, nn, r.select),
+                        I(v, nt, A() === Jn ? "vertical" : "");
+                      for (var e = 0; e < u; e++) {
+                        var c = j("li", null, v),
+                          f = j("button", { class: i.page, type: "button" }, c),
+                          a = y.getIn(e).map(function (n) {
+                            return n.slide.id;
+                          }),
+                          s = !x() && 1 < o ? r.pageX : r.slideX;
+                        m(f, "click", R(L, e)),
+                          d.paginationKeyboard && m(f, "keydown", R(O, e)),
+                          I(c, Z, "presentation"),
+                          I(f, Z, "tab"),
+                          I(f, Kn, a.join(" ")),
+                          I(f, nn, On(s, e + 1)),
+                          I(f, $, -1),
+                          S.push({ li: c, button: f, page: e });
+                      }
+                      z(), g("pagination:mounted", { list: v, items: S }, _(l.index));
+                    }
+                  },
+                  destroy: E,
+                  getAt: _,
+                  update: z,
+                };
+              },
+              Sync: function (i, n, t) {
+                var r = t.isNavigation,
+                  o = t.slideFocus,
+                  u = [];
+                function e() {
+                  var n, t;
+                  i.splides.forEach(function (n) {
+                    n.isParent || (f(i, n.splide), f(n.splide, i));
+                  }),
+                    r &&
+                      ((n = Q(i)),
+                      (t = n.on)(Mn, s),
+                      t(Yn, l),
+                      t([B, K], a),
+                      u.push(n),
+                      n.emit(Gn, i.splides));
+                }
+                function c() {
+                  u.forEach(function (n) {
+                    n.destroy();
+                  }),
+                    D(u);
+                }
+                function f(n, r) {
+                  n = Q(n);
+                  n.on(H, function (n, t, i) {
+                    r.go(r.is(Pt) ? i : n);
+                  }),
+                    u.push(n);
+                }
+                function a() {
+                  I(n.Elements.list, nt, t.direction === Jn ? "vertical" : "");
+                }
+                function s(n) {
+                  i.go(n.index);
+                }
+                function l(n, t) {
+                  b(Yt, Tt(t)) && (s(n), F(t));
+                }
+                return {
+                  setup: R(n.Media.set, { slideFocus: en(o) ? r : o }, !0),
+                  mount: e,
+                  destroy: c,
+                  remount: function () {
+                    c(), e();
+                  },
+                };
+              },
+              Wheel: function (e, c, f) {
+                var n = Q(e).bind,
+                  a = 0;
+                function t(n) {
+                  var t, i, r, o, u;
+                  n.cancelable &&
+                    ((t = (u = n.deltaY) < 0),
+                    (i = mn(n)),
+                    (r = f.wheelMinThreshold || 0),
+                    (o = f.wheelSleep || 0),
+                    U(u) > r && o < i - a && (e.go(t ? "<" : ">"), (a = i)),
+                    (u = t),
+                    (f.releaseWheel &&
+                      !e.state.is(G) &&
+                      -1 === c.Controller.getAdjacent(u)) ||
+                      F(n));
+                }
+                return {
+                  mount: function () {
+                    f.wheel && n(c.Elements.track, "wheel", t, jt);
+                  },
+                };
+              },
+              Live: function (n, t, i) {
+                var r = Q(n).on,
+                  o = t.Elements.track,
+                  u = i.live && !i.isNavigation,
+                  e = j("span", wt),
+                  c = qn(90, R(f, !1));
+                function f(n) {
+                  I(o, rt, n), n ? (L(o, e), c.start()) : (T(e), c.cancel());
+                }
+                function a(n) {
+                  u && I(o, it, n ? "off" : "polite");
+                }
+                return {
+                  mount: function () {
+                    u &&
+                      (a(!t.Autoplay.isPaused()),
+                      I(o, ot, !0),
+                      (e.textContent = "…"),
+                      r(Fn, R(a, !0)),
+                      r(Xn, R(a, !1)),
+                      r([Dn, V], R(f, !0)));
+                  },
+                  disable: a,
+                  destroy: function () {
+                    P(o, [it, ot, rt]), T(e);
+                  },
+                };
+              },
+            }),
+            qt = {
+              type: "slide",
+              role: "region",
+              speed: 400,
+              perPage: 1,
+              cloneStatus: !0,
+              arrows: !0,
+              pagination: !0,
+              paginationKeyboard: !0,
+              interval: 5e3,
+              pauseOnHover: !0,
+              pauseOnFocus: !0,
+              resetProgress: !0,
+              easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+              drag: !0,
+              direction: "ltr",
+              trimSpace: !0,
+              focusableNodes: "a, button, textarea, input, select, iframe",
+              live: !0,
+              classes: {
+                slide: at,
+                clone: st,
+                arrows: dt,
+                arrow: vt,
+                prev: ht,
+                next: pt,
+                pagination: gt,
+                page: mt,
+                spinner: i + "spinner",
+              },
+              i18n: {
+                prev: "Previous slide",
+                next: "Next slide",
+                first: "Go to first slide",
+                last: "Go to last slide",
+                slideX: "Go to slide %s",
+                pageX: "Go to page %s",
+                play: "Start autoplay",
+                pause: "Pause autoplay",
+                carousel: "carousel",
+                slide: "slide",
+                select: "Select a slide to show",
+                slideLabel: "%s of %s",
+              },
+              reducedMotion: { speed: 0, rewindSpeed: 0, autoplay: "pause" },
+            };
+          function Bt(n, t, i) {
+            var r = t.Slides;
+            function o() {
+              r.forEach(function (n) {
+                n.style("transform", "translateX(-" + 100 * n.index + "%)");
+              });
+            }
+            return {
+              mount: function () {
+                Q(n).on([B, J], o);
+              },
+              start: function (n, t) {
+                r.style("transition", "opacity " + i.speed + "ms " + i.easing), p(t);
+              },
+              cancel: on,
+            };
+          }
+          function Ht(u, n, e) {
+            var c,
+              f = n.Move,
+              a = n.Controller,
+              s = n.Scroll,
+              t = n.Elements.list,
+              l = R(_, t, "transition");
+            function i() {
+              l(""), s.cancel();
+            }
+            return {
+              mount: function () {
+                Q(u).bind(t, "transitionend", function (n) {
+                  n.target === t && c && (i(), c());
+                });
+              },
+              start: function (n, t) {
+                var i = f.toPosition(n, !0),
+                  r = f.getPosition(),
+                  o = (function (n) {
+                    var t = e.rewindSpeed;
+                    if (u.is(Mt) && t) {
+                      var i = a.getIndex(!0),
+                        r = a.getEnd();
+                      if ((0 === i && r <= n) || (r <= i && 0 === n)) return t;
+                    }
+                    return e.speed;
+                  })(n);
+                1 <= U(i - r) && 1 <= o
+                  ? e.useScroll
+                    ? s.scroll(i, o, !1, t)
+                    : (l("transform " + o + "ms " + e.easing),
+                      f.translate(i, !0),
+                      (c = t))
+                  : (f.jump(n), t());
+              },
+              cancel: i,
+            };
+          }
+          t = (function () {
+            function i(n, t) {
+              (this.event = Q()),
+                (this.Components = {}),
+                (this.state = s(1)),
+                (this.splides = []),
+                (this.n = {}),
+                (this.t = {});
+              n = C(n) ? pn(document, n) : n;
+              bn(n, n + " is invalid."),
+                (t = d(
+                  { label: z((this.root = n), nn) || "", labelledby: z(n, Zn) || "" },
+                  qt,
+                  i.defaults,
+                  t || {}
+                ));
+              try {
+                d(t, JSON.parse(z(n, f)));
+              } catch (n) {
+                bn(!1, "Invalid JSON");
+              }
+              this.n = Object.create(d({}, t));
+            }
+            var n = i.prototype;
+            return (
+              (n.mount = function (n, t) {
+                var i = this,
+                  r = this.state,
+                  o = this.Components;
+                return (
+                  bn(r.is([1, 7]), "Already mounted!"),
+                  r.set(1),
+                  (this.i = o),
+                  (this.r = t || this.r || (this.is(It) ? Bt : Ht)),
+                  (this.t = n || this.t),
+                  w(an({}, Ut, this.t, { Transition: this.r }), function (n, t) {
+                    n = n(i, o, i.n);
+                    (o[t] = n).setup && n.setup();
+                  }),
+                  w(o, function (n) {
+                    n.mount && n.mount();
+                  }),
+                  this.emit(B),
+                  M(this.root, "is-initialized"),
+                  r.set(3),
+                  this.emit("ready"),
+                  this
+                );
+              }),
+              (n.sync = function (n) {
+                return (
+                  this.splides.push({ splide: n }),
+                  n.splides.push({ splide: this, isParent: !0 }),
+                  this.state.is(3) &&
+                    (this.i.Sync.remount(), n.Components.Sync.remount()),
+                  this
+                );
+              }),
+              (n.go = function (n) {
+                return this.i.Controller.go(n), this;
+              }),
+              (n.on = function (n, t) {
+                return this.event.on(n, t), this;
+              }),
+              (n.off = function (n) {
+                return this.event.off(n), this;
+              }),
+              (n.emit = function (n) {
+                var t;
+                return (
+                  (t = this.event).emit.apply(t, [n].concat(o(arguments, 1))), this
+                );
+              }),
+              (n.add = function (n, t) {
+                return this.i.Slides.add(n, t), this;
+              }),
+              (n.remove = function (n) {
+                return this.i.Slides.remove(n), this;
+              }),
+              (n.is = function (n) {
+                return this.n.type === n;
+              }),
+              (n.refresh = function () {
+                return this.emit(J), this;
+              }),
+              (n.destroy = function (t) {
+                void 0 === t && (t = !0);
+                var n = this.event,
+                  i = this.state;
+                return (
+                  i.is(1)
+                    ? Q(this).on("ready", this.destroy.bind(this, t))
+                    : (w(
+                        this.i,
+                        function (n) {
+                          n.destroy && n.destroy(t);
+                        },
+                        !0
+                      ),
+                      n.emit(a),
+                      n.destroy(),
+                      t && D(this.splides),
+                      i.set(7)),
+                  this
+                );
+              }),
+              Jt(i, [
+                {
+                  key: "options",
+                  get: function () {
+                    return this.n;
+                  },
+                  set: function (n) {
+                    this.i.Media.set(n, !0, !0);
+                  },
+                },
+                {
+                  key: "length",
+                  get: function () {
+                    return this.i.Slides.getLength(!0);
+                  },
+                },
+                {
+                  key: "index",
+                  get: function () {
+                    return this.i.Controller.getIndex();
+                  },
+                },
+              ]),
+              i
+            );
+          })();
+          return (t.defaults = {}), (t.STATES = r), t;
+        }),
+        "object" == typeof exports && "undefined" != typeof module
+          ? (module.exports = t())
+          : "function" == typeof define && define.amd
+          ? define(t)
+          : ((n = "undefined" != typeof globalThis ? globalThis : n || self).Splide =
+              t());
+      //# sourceMappingURL=splide.min.js.map
+</script>
+<!-- splide js library End -->
+
+<!-- custom js start -->
+<script>
+/*----------------------
+---- RoW slider js -----
+------------------------*/
+let citrusEuk_carousel = document.querySelector(".citrusEuk_carousel");
+
+let citrusEuk_carouselInner = document.querySelector(
+  ".citrusEuk_carousel-inner"
+);
+
+let prev = document.querySelector(".citrusEuk_carousel-controls .prev");
+
+let next = document.querySelector(".citrusEuk_carousel-controls .next");
+
+let slides = document.querySelectorAll(
+  ".citrusEuk_carousel-inner .citrusEuk_carousel-item"
+);
+
+let totalSlides = slides.length;
+
+let step = 100 / totalSlides;
+
+let activeSlide = 0;
+
+let activeIndicator = 0;
+
+let direction = -1;
+
+let jump = 1;
+
+let interval = 5000; /*5000*/
+
+let time;
+
+//Init citrusEuk_carousel
+citrusEuk_carouselInner.style.minWidth = totalSlides * 100 + "%";
+loadIndicators();
+loop(true);
+
+//citrusEuk_carousel events
+
+next.addEventListener("click", () => {
+  slideToNext();
+});
+
+prev.addEventListener("click", () => {
+  slideToPrev();
+});
+
+citrusEuk_carouselInner.addEventListener("transitionend", () => {
+  if (direction === -1) {
+    if (jump > 1) {
+      for (let i = 0; i < jump; i++) {
+        activeSlide++;
+        citrusEuk_carouselInner.append(
+          citrusEuk_carouselInner.firstElementChild
+        );
+      }
+    } else {
+      activeSlide++;
+      citrusEuk_carouselInner.append(
+        citrusEuk_carouselInner.firstElementChild
+      );
+    }
+  } else if (direction === 1) {
+    if (jump > 1) {
+      for (let i = 0; i < jump; i++) {
+        activeSlide--;
+        citrusEuk_carouselInner.prepend(
+          citrusEuk_carouselInner.lastElementChild
+        );
+      }
+    } else {
+      activeSlide--;
+      citrusEuk_carouselInner.prepend(
+        citrusEuk_carouselInner.lastElementChild
+      );
+    }
+  }
+
+  citrusEuk_carouselInner.style.transition = "none";
+  citrusEuk_carouselInner.style.transform = "translateX(0%)";
+  setTimeout(() => {
+    jump = 1;
+    citrusEuk_carouselInner.style.transition = "all ease .5s";
+  });
+  updateIndicators();
+});
+
+document
+  .querySelectorAll(".citrusEuk_carousel-indicators span")
+  .forEach((item) => {
+    item.addEventListener("click", (e) => {
+      let slideTo = parseInt(e.target.dataset.slideTo);
+      let indicators = document.querySelectorAll(
+        ".citrusEuk_carousel-indicators span"
+      );
+
+      indicators.forEach((item, index) => {
+        if (item.classList.contains("active")) {
+          activeIndicator = index;
+        }
+      });
+      if (slideTo - activeIndicator > 1) {
+        jump = slideTo - activeIndicator;
+        step = jump * step;
+        slideToNext();
+      } else if (slideTo - activeIndicator === 1) {
+        slideToNext();
+      } else if (slideTo - activeIndicator < 0) {
+        if (Math.abs(slideTo - activeIndicator) > 1) {
+          jump = Math.abs(slideTo - activeIndicator);
+          step = jump * step;
+          slideToPrev();
+        }
+        slideToPrev();
+      }
+      step = 100 / totalSlides;
+    });
+  });
+
+citrusEuk_carousel.addEventListener("mouseover", () => {
+  loop(false);
+});
+
+citrusEuk_carousel.addEventListener("mouseout", () => {
+  loop(true);
+});
+
+//citrusEuk_carousel functions
+
+function loadIndicators() {
+  slides.forEach((slide, index) => {
+    if (index === 0) {
+      document.querySelector(
+        ".citrusEuk_carousel-indicators"
+      ).innerHTML += `<span data-slide-to="${index}" class="active"></span>`;
+    } else {
+      document.querySelector(
+        ".citrusEuk_carousel-indicators"
+      ).innerHTML += `<span data-slide-to="${index}"></span>`;
+    }
+  });
+}
+
+function updateIndicators() {
+  if (activeSlide > totalSlides - 1) {
+    activeSlide = 0;
+  } else if (activeSlide < 0) {
+    activeSlide = totalSlides - 1;
+  }
+  document
+    .querySelector(".citrusEuk_carousel-indicators span.active")
+    .classList.remove("active");
+  document
+    .querySelectorAll(".citrusEuk_carousel-indicators span")
+    [activeSlide].classList.add("active");
+}
+
+function slideToNext() {
+  if (direction === 1) {
+    direction = -1;
+    citrusEuk_carouselInner.prepend(
+      citrusEuk_carouselInner.lastElementChild
+    );
+  }
+
+  citrusEuk_carousel.style.justifyContent = "flex-start";
+  citrusEuk_carouselInner.style.transform = `translateX(-${step}%)`;
+}
+
+function slideToPrev() {
+  if (direction === -1) {
+    direction = 1;
+    citrusEuk_carouselInner.append(
+      citrusEuk_carouselInner.firstElementChild
+    );
+  }
+  citrusEuk_carousel.style.justifyContent = "flex-end";
+  citrusEuk_carouselInner.style.transform = `translateX(${step}%)`;
+  loop(false);
+}
+
+function loop(status) {
+  if (status === true) {
+    time = setInterval(() => {
+      slideToNext();
+    }, interval);
+  } else {
+    clearInterval(time);
+  }
+}
+// pov loader add. before full load js pov none.
+document.addEventListener("DOMContentLoaded", function () {
+  citrusEuk_carousel.style.display = "flex";
+});
+
+/*-----------------------
+--- End Row js Slider ----
+------------------------*/
+
+/**----------------------
+ * product scroller js ---
+ --------------------------*/
+// tab carousal js
+// initialize product scroller
+advanceArrows("stellaDatItems");
+advanceArrows("stellaCatItems");
+function advanceArrows(idx) {
+  var splideElement = "#" + idx;
+  var splideDefaultOptions = {
+      arrows: true,
+      type: "slide",
+      start:0,
+      focus: 0,
+      pagination: false,
+      rewindSpeed: 500,
+      speed: 500,
+      pauseOnHover: true,
+      perPage: 6,
+      perMove: 1,
+      omitEnd: true,
+      breakpoints: {
+        375: {
+          perPage: 1,
+        },
+        576: {
+          perPage: 2,
+        },
+        991: {
+          perPage: 3,
+        },
+        992: {
+          perPage: 3,
+        },
+        1024: {
+          perPage: 4,
+        },
+        1200: {
+          perPage: 6,
+        },
+        1440: {
+          perPage: 6,
+        },
+      },
+    };
+    new Splide(splideElement, splideDefaultOptions).mount();
+
+}
+
+
+/* ************************************************************************************** */
+//for tab sweater & loader added
+document.addEventListener("DOMContentLoaded", function () {
+  filterCatProduct("stellaCatItems");
+  filterDogProduct("stellaDatItems");
+});
+// for dog filter function
+function filterDogProduct(c) {
+  var x, i;
+  x = document.getElementsByClassName("citrusEuk__dogProduct");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClass(x[i], "citrusTabShow");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], " citrusTabShow");
+  }
+  advanceArrows(c);
+}
+// for cat filter function
+function filterCatProduct(c) {
+  var x, i;
+  x = document.getElementsByClassName("citrusEuk__catProduct");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClass(x[i], "citrusTabShow");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "citrusTabShow");
+  }
+  advanceArrows(c);
+}
+function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+document.addEventListener("DOMContentLoaded", function () {
+  // for dog active class filter
+  var dogBtnContainer = document.getElementById("citrusEukTabId");
+  var dogBtns = dogBtnContainer.getElementsByClassName(
+    "citrusEuk__tab_item"
+  );
+  // for cat active class
+  var catBtnContainer = document.getElementById("citrusEukTabIdCat");
+  var catBtns = catBtnContainer.getElementsByClassName(
+    "citrusEuk__tab_item"
+  );
+  addActiveClass(dogBtns, "citrusEuk__Dog-active_tab");
+  addActiveClass(catBtns, "citrusEuk__cat-active_tab");
+});
+function addActiveClass(element, activeClass) {
+  for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function () {
+      var current = document.getElementsByClassName(activeClass);
+      current[0].className = current[0].className.replace(
+        " " + activeClass,
+        ""
+      );
+      this.className += " " + activeClass;
+    });
+  }
+}
+//for Dog best seller tab switcher
+</script>
